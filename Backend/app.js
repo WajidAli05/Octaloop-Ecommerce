@@ -1,0 +1,47 @@
+const express = require("express");
+const logger = require('./config/logger/logger');
+const morgan = require('morgan'); 
+const cors = require('cors');
+const app = express();
+const env = require("dotenv");
+const dbConnection = require("./config/database/dbConnection.js");
+env.config();
+app.use(express.json());
+
+//create database connection
+dbConnection();
+
+//import user router
+const userRouter = require("./routes/userRoutes");
+
+
+const morganFormat = ':method :url :status :response-time ms';
+//middleware for logging using morgan and winston
+app.use(morgan(morganFormat, {
+  stream: {
+    write: (message) => {
+      const logObject = {
+        method: message.split(' ')[0],
+        url: message.split(' ')[1],
+        status: message.split(' ')[2],
+        responseTime: message.split(' ')[3],
+
+      };
+      logger.info(JSON.stringify(logObject));
+    }
+  }
+}));
+
+//use cors
+app.use(cors());
+
+//use user router
+app.use("/user", userRouter);
+
+//create app.listen and use PORT from .env file
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT , ()=>{
+    console.log(`Server is running on port ${PORT}`);
+})
+
