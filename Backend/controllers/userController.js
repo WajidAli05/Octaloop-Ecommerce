@@ -42,6 +42,21 @@ const register = async (req, res) => {
 }
 
 
+//admin controller for approving users
+const approveUser = async (req, res) => {
+    try{
+        const user = req.user;
+
+        //change the isApprovedByAdmin field to true and update the record in the database as well
+        user.isApprovedByAdmin = true;
+        await User.findOneByIdAndUpdate(user._id, user);
+    }
+    catch(error){
+        logger.error(error.message);
+        return res.status(500).json({error: error.message});
+    }
+}
+
 const login =  async (req, res) => {
     try{
         const { email, password } = req.body;
@@ -54,6 +69,14 @@ const login =  async (req, res) => {
         if(!isUser){
             logger.error("User does not exist");
             return res.status(400).json({message: "User does not exist"});
+        }
+
+        //check if the user is approved by the admin or not
+        console.log(isUser);
+        if(!isUser.isApprovedByAdmin){
+            logger.error("User not approved by admin");
+            return res.status(400).json({message: "User not approved by admin. Please wait for the admin to approve your account", 
+                isApprovedByAdmin: false});
         }
 
         //compare the password with the hashed password in the database
@@ -113,6 +136,17 @@ const getUser = async (req, res) => {
 }
 
 
+//user profile image upload controller
+const uploadProfileImage = async (req, res) => {
+    if(!req.file){
+        logger.error("Please provide an image");
+        return res.status(400).json({message: "Please provide an image"});
+    }
+    else{
+        res.status(200).json({message: "Profile Image Uploaded Successfully"});
+    }
+}
+
 const checkUserExistence = async (req, res) => {
     try{
         //get the email from the request body
@@ -126,6 +160,7 @@ const checkUserExistence = async (req, res) => {
             //if user does not exist then just return false
             return res.status(200).json(false);
         }
+
 
         //nodemailer mail sending logic
         await sendEmail(email);
@@ -146,7 +181,7 @@ const checkSignupFields = async (firstName, lastName, dob, username, email, pass
     await checkEmailAndPassword(email, password);
 
     //check if any field is empty
-    if(!firstName.trim() || !lastName.trim() || !dob.trim() || !username.trim()){
+    if(!firstName || !lastName|| !dob || !username){
         logger.error("Please fill all the fields");
         return res.status(400).json({message: "Please fill all the fields"});
     }
@@ -221,7 +256,12 @@ const generateToken = async (user, req , res) => {
     }
     else{
         logger.info(token);
-        return res.status(200).json({message: "Login Successful", token});
+        return res.status(200).json({message: "Login Successful", 
+            token , 
+            isApprovedByAdmin: 
+            user.isApprovedByAdmin , 
+            isAdmin: user.isAdmin
+        });
     }
 }
 
@@ -230,5 +270,7 @@ module.exports = {
     login,
     getUsers,
     getUser,
-    checkUserExistence
+    checkUserExistence,
+    uploadProfileImage,
+    approveUser
 }
