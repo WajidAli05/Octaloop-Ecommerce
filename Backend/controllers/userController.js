@@ -24,7 +24,14 @@ const register = async (req, res) => {
 
         //hash the password before storing in the database
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({email, password: hashedPassword});
+        const user = new User({
+            firstName,
+            lastName,
+            dob,
+            username,
+            email, 
+            password: hashedPassword
+        });
         await user.save();
 
         //check if the user was created successfully or not
@@ -102,7 +109,7 @@ const getUsers = async (req, res) => {
             logger.error("No users found");
             return res.status(404).json({ message: "No users found" });
         }
-        logger.info(users);
+        logger.info("All users fetched successfully");
         return res.status(200).json({ users });
     } catch (error) {
         logger.error(error.message);
