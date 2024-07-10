@@ -12,7 +12,8 @@ const {
     getUser,
     checkUserExistence,
     uploadProfileImage ,
-    approveUser
+    approveUser,
+    deleteUser
 } = require("../controllers/userController");
 
 //user can register and login using the following routes
@@ -23,8 +24,9 @@ router.post("/upload-profile-image", upload.single("profileImage") , uploadProfi
 
 //check access token on every request to the following routes
 router.use(validateToken);
-//admin route for approving the users
-router.put("/approve-user", isAdminMiddleware , approveUser);
+//admin routes for approving and rejecting a user
+router.put("/approve-user/:userId", isAdminMiddleware , approveUser);
+router.put("/delete-user/:userId", isAdminMiddleware , deleteUser);
 
 //get all the users
 router.get("/users", getUsers);

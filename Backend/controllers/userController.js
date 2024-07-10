@@ -49,18 +49,33 @@ const register = async (req, res) => {
 }
 
 
-//admin controller for approving users
+//admin controller for approving a user
 const approveUser = async (req, res) => {
     try{
-        const user = req.user;
+        const userId = req.params.userId;
 
-        //change the isApprovedByAdmin field to true and update the record in the database as well
-        user.isApprovedByAdmin = true;
-        await User.findOneByIdAndUpdate(user._id, user);
+        //check if the user exists or not
+        await User.findByIdAndUpdate(userId, {isApprovedByAdmin: true});
+        logger.info("User approved by admin successfully");
+        return res.status(200).json({message: "User approved by admin successfully"});
     }
     catch(error){
         logger.error(error.message);
-        return res.status(500).json({error: error.message});
+        return res.status(500).json({message : "Could not update user status to approved!" ,error: error.message});
+    }
+}
+
+
+//admin controller for deleting a user
+const deleteUser = async (req, res) => {
+    try{
+        const userId = req.params.userId;
+
+        await User.findByIdAndDelete(userId);
+    }
+    catch(error){
+        logger.error(error.message);
+        return res.status(500).json({message : "Error deleting the user permanently." ,error: error.message});
     }
 }
 
@@ -279,5 +294,6 @@ module.exports = {
     getUser,
     checkUserExistence,
     uploadProfileImage,
-    approveUser
+    approveUser,
+    deleteUser
 }

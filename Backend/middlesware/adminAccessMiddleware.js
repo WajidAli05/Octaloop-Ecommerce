@@ -3,8 +3,8 @@ const logger = require('../config/logger/logger.js');
 
 const isAdmin = async (req, res, next) => {
     try{
+        const email =  req.user.email;
         //if the user is logged in then get the email from the token else get the email from the request body
-        const email = await User.findById(req.user.email) || req.body.email;
         const user = await User.findOne({email});
 
         //if user is not an admin then return
