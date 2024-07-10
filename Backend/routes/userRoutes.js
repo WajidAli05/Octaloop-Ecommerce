@@ -26,7 +26,7 @@ router.post("/upload-profile-image", upload.single("profileImage") , uploadProfi
 router.use(validateToken);
 //admin routes for approving and rejecting a user
 router.put("/approve-user/:userId", isAdminMiddleware , approveUser);
-router.put("/delete-user/:userId", isAdminMiddleware , deleteUser);
+router.delete("/delete-user/:userId", isAdminMiddleware , deleteUser);
 
 //get all the users
 router.get("/users", getUsers);
