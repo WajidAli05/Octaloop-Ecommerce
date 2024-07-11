@@ -124,7 +124,7 @@ const login =  async (req, res) => {
 
 const getUsers = async (req, res) => {
     try {
-        const users = await User.find();
+        const users = await User.find({isAdmin : false});
         if (users.length === 0) {
             logger.error("No users found");
             return res.status(404).json({ message: "No users found" });
