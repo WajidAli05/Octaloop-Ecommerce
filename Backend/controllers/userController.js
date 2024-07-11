@@ -225,7 +225,7 @@ const checkEmailAndPassword = async (email, password) => {
     }
 
     //NOTE: No check on password length, you can add it if you want
-    else if(!email.includes("@") || !email.includes(".com") || email.length < 11 || email.length > 50){
+    else if(!email.includes("@") || !email.includes(".") || email.length < 11 || email.length > 50){
         return res.status(400).json({message: "Please provide a valid email"});
     }
 }
