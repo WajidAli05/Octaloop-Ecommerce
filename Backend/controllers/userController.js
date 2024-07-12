@@ -10,21 +10,13 @@ env.config();
 const register = async (req, res) => {
     try {
         const { firstName, lastName, dob, username,  email, password } = req.body;
-        const profileImage = req.file;
-        console.log(req.file);
+        const profileImagePath = req.file.path;
         //call function checkEmailAndPassword to check if the email and password are valid
-        await checkSignupFields(firstName, lastName, dob, username);
+        await checkSignupFields(firstName, lastName, dob, username , profileImagePath);
+
          //call function checkEmailAndPassword to check if the email and password are valid
         await checkEmailAndPassword(email, password);
         
-        if(!req.file){
-            logger.error("Please provide an image");
-            return res.status(400).json({message: "Please provide an image"});
-        }
-        else{
-            logger.info("Profile Image Uploaded Successfully");
-            res.status(200).json({message: "Profile Image Uploaded Successfully"});
-        }
 
         //check if the user already exists
         if(await User.findOne({email})){
@@ -40,7 +32,8 @@ const register = async (req, res) => {
             dob,
             username,
             email, 
-            password: hashedPassword
+            password: hashedPassword,
+            profileImagePath
         });
         await user.save();
 
@@ -173,6 +166,7 @@ const getUser = async (req, res) => {
 }
 
 
+// ----------------------THIS FUNCTION NOT IN USE FOR NOW----------------------//
 //user profile image upload controller
 const uploadProfileImage = async (req, res) => {
     if(!req.file){
@@ -214,10 +208,10 @@ const checkUserExistence = async (req, res) => {
 
 
 //check all the sign up fields
-const checkSignupFields = async (firstName, lastName, dob, username) => {
+const checkSignupFields = async (firstName, lastName, dob, username , profileImagePath) => {
      
     //check if any field is empty
-    if(!firstName || !lastName|| !dob || !username){
+    if(!firstName || !lastName|| !dob || !username || !profileImagePath){
         logger.error("Please fill all the fields");
         return res.status(400).json({message: "Please fill all the fields"});
     }
