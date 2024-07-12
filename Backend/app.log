@@ -10581,3 +10581,266 @@
 {"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"3.643\"}","timestamp":"2024-07-11T16:23:44.331Z"}
 {"level":"error","message":"User does not exist","timestamp":"2024-07-11T16:23:44.390Z"}
 {"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"71.126\"}","timestamp":"2024-07-11T16:23:44.394Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T09:13:57.820Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"3.747\"}","timestamp":"2024-07-12T09:25:33.719Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.369\"}","timestamp":"2024-07-12T09:25:34.201Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T09:25:34.209Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"8.405\"}","timestamp":"2024-07-12T09:25:34.215Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T09:25:35.634Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"5.005\"}","timestamp":"2024-07-12T09:25:35.637Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T09:25:46.515Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"12328.364\"}","timestamp":"2024-07-12T09:25:46.517Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T09:25:46.520Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"10899.888\"}","timestamp":"2024-07-12T09:25:46.523Z"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW1laGRpQGdtYWlsLmNvbSIsImlhdCI6MTcyMDc3NjY2NSwiZXhwIjoxNzIwNzgwMjY1fQ.KQ9P9Gdfz-zpSHFFWcC1DXljKXhr3ZoM47C_RfggMco","timestamp":"2024-07-12T09:31:05.284Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"200\",\"responseTime\":\"329.783\"}","timestamp":"2024-07-12T09:31:05.288Z"}
+{"level":"info","message":"wajid@gmail.com","timestamp":"2024-07-12T09:32:42.221Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"240.763\"}","timestamp":"2024-07-12T09:32:42.225Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-12T09:32:46.305Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:04:10.825Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"3.584\"}","timestamp":"2024-07-12T12:06:29.470Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.277\"}","timestamp":"2024-07-12T12:06:29.725Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:06:29.732Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"6.941\"}","timestamp":"2024-07-12T12:06:29.737Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:06:29.808Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"94.016\"}","timestamp":"2024-07-12T12:06:29.809Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:06:30.189Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"5.505\"}","timestamp":"2024-07-12T12:06:30.192Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:06:30.265Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"88.595\"}","timestamp":"2024-07-12T12:06:30.267Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:07:03.818Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.660\"}","timestamp":"2024-07-12T12:07:41.886Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"2.693\"}","timestamp":"2024-07-12T12:07:41.930Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:07:41.940Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"11.433\"}","timestamp":"2024-07-12T12:07:41.951Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:07:42.304Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"399.264\"}","timestamp":"2024-07-12T12:07:42.306Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:08:09.965Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:19:33.816Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:19:45.311Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.573\"}","timestamp":"2024-07-12T12:20:16.550Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.424\"}","timestamp":"2024-07-12T12:20:16.609Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:20:16.618Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"10.782\"}","timestamp":"2024-07-12T12:20:16.625Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:20:16.697Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"111.125\"}","timestamp":"2024-07-12T12:20:16.701Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:21:27.837Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:21:41.019Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:21:46.768Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.919\"}","timestamp":"2024-07-12T12:22:34.983Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.242\"}","timestamp":"2024-07-12T12:22:35.038Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:22:35.050Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"10.445\"}","timestamp":"2024-07-12T12:22:35.054Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:22:35.102Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"98.874\"}","timestamp":"2024-07-12T12:22:35.106Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:24:20.723Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.902\"}","timestamp":"2024-07-12T12:24:50.970Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.260\"}","timestamp":"2024-07-12T12:24:51.035Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:24:51.046Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"9.060\"}","timestamp":"2024-07-12T12:24:51.051Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:24:51.114Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"117.481\"}","timestamp":"2024-07-12T12:24:51.120Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:25:41.910Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.840\"}","timestamp":"2024-07-12T12:26:06.507Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.566\"}","timestamp":"2024-07-12T12:26:06.579Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:26:06.588Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"8.473\"}","timestamp":"2024-07-12T12:26:06.594Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:26:06.642Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"105.837\"}","timestamp":"2024-07-12T12:26:06.646Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:26:21.769Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:26:26.674Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.690\"}","timestamp":"2024-07-12T12:27:21.338Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.551\"}","timestamp":"2024-07-12T12:27:21.392Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:27:21.408Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"15.828\"}","timestamp":"2024-07-12T12:27:21.474Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:27:21.534Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"178.129\"}","timestamp":"2024-07-12T12:27:21.537Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:28:17.284Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:28:28.194Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:28:38.808Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:28:45.242Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:29:12.475Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:29:36.222Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.756\"}","timestamp":"2024-07-12T12:30:03.124Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"4.448\"}","timestamp":"2024-07-12T12:30:03.182Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"400\",\"responseTime\":\"16.459\"}","timestamp":"2024-07-12T12:30:03.218Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:30:41.572Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:31:15.173Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:31:42.859Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:31:51.331Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"2.034\"}","timestamp":"2024-07-12T12:32:33.702Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.398\"}","timestamp":"2024-07-12T12:32:33.755Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:32:33.769Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"10.560\"}","timestamp":"2024-07-12T12:32:33.779Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:32:33.826Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"105.079\"}","timestamp":"2024-07-12T12:32:33.829Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.188\"}","timestamp":"2024-07-12T12:42:38.920Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:42:38.996Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"72.946\"}","timestamp":"2024-07-12T12:42:38.998Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:42:39.007Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"1.732\"}","timestamp":"2024-07-12T12:42:39.009Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:43:17.528Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"3.193\"}","timestamp":"2024-07-12T12:43:45.410Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:43:45.519Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"77.827\"}","timestamp":"2024-07-12T12:43:45.523Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:43:45.536Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"5.047\"}","timestamp":"2024-07-12T12:43:45.539Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.416\"}","timestamp":"2024-07-12T12:48:13.507Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T12:48:13.658Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"143.130\"}","timestamp":"2024-07-12T12:48:13.659Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:48:13.670Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"2.925\"}","timestamp":"2024-07-12T12:48:13.672Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T12:48:40.908Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T12:50:50.994Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"7.434\"}","timestamp":"2024-07-12T12:50:51.004Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:10:29.227Z"}
+{"level":"error","message":"Please fill all the fields","timestamp":"2024-07-12T13:10:31.125Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:10:31.126Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"6.163\"}","timestamp":"2024-07-12T13:10:31.134Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:10:48.143Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:10:51.476Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:11:03.720Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:11:06.198Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"8.059\"}","timestamp":"2024-07-12T13:11:06.206Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:11:16.669Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:14:05.308Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:14:15.434Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:14:19.951Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:15:55.912Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"6.929\"}","timestamp":"2024-07-12T13:15:55.921Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:16:32.412Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:16:53.432Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"9.762\"}","timestamp":"2024-07-12T13:16:53.443Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:17:17.801Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:17:19.936Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"22.575\"}","timestamp":"2024-07-12T13:17:19.946Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:18:11.075Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:18:14.867Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"22.361\"}","timestamp":"2024-07-12T13:18:14.876Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:19:30.818Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:19:39.895Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:19:42.858Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"16.307\"}","timestamp":"2024-07-12T13:19:42.869Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:20:52.563Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:20:58.615Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:21:06.046Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:21:07.391Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:21:07.394Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"16.212\"}","timestamp":"2024-07-12T13:21:07.404Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:21:31.869Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:22:01.662Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:22:15.650Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:22:23.751Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:22:37.876Z"}
+{"level":"error","message":"Please fill all the fields","timestamp":"2024-07-12T13:22:37.998Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:22:38.008Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"29.143\"}","timestamp":"2024-07-12T13:22:38.034Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:22:58.566Z"}
+{"level":"error","message":"Please fill all the fields","timestamp":"2024-07-12T13:23:00.224Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:23:00.231Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"14.415\"}","timestamp":"2024-07-12T13:23:00.238Z"}
+{"level":"error","message":"Invalid Token","timestamp":"2024-07-12T13:25:49.882Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"400\",\"responseTime\":\"15.530\"}","timestamp":"2024-07-12T13:25:49.885Z"}
+{"level":"info","message":"User created successfully","timestamp":"2024-07-12T13:26:19.854Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"200\",\"responseTime\":\"297.779\"}","timestamp":"2024-07-12T13:26:19.855Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:26:42.251Z"}
+{"level":"error","message":"User already exists","timestamp":"2024-07-12T13:26:51.792Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"400\",\"responseTime\":\"92.066\"}","timestamp":"2024-07-12T13:26:51.801Z"}
+{"level":"error","message":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"test@gmail.com\" }","timestamp":"2024-07-12T13:26:52.141Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:28:02.019Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"3.186\"}","timestamp":"2024-07-12T13:28:49.311Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.483\"}","timestamp":"2024-07-12T13:28:49.397Z"}
+{"level":"error","message":"Please fill all the fields","timestamp":"2024-07-12T13:28:49.410Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:28:49.457Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"63.667\"}","timestamp":"2024-07-12T13:28:49.478Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T13:28:49.495Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"159.731\"}","timestamp":"2024-07-12T13:28:49.514Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:35:03.553Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"3.168\"}","timestamp":"2024-07-12T13:38:46.166Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.373\"}","timestamp":"2024-07-12T13:38:46.229Z"}
+{"level":"error","message":"Please fill all the fields","timestamp":"2024-07-12T13:38:46.234Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:38:46.250Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"22.382\"}","timestamp":"2024-07-12T13:38:46.264Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T13:38:46.337Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"159.777\"}","timestamp":"2024-07-12T13:38:46.353Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:39:13.237Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"3.305\"}","timestamp":"2024-07-12T13:39:43.504Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.292\"}","timestamp":"2024-07-12T13:39:43.535Z"}
+{"level":"error","message":"Please fill all the fields","timestamp":"2024-07-12T13:39:43.544Z"}
+{"level":"error","message":"res is not defined","timestamp":"2024-07-12T13:39:43.556Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"500\",\"responseTime\":\"18.665\"}","timestamp":"2024-07-12T13:39:43.560Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T13:39:43.604Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"82.922\"}","timestamp":"2024-07-12T13:39:43.607Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.236\"}","timestamp":"2024-07-12T13:41:46.967Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.239\"}","timestamp":"2024-07-12T13:41:46.971Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T13:41:47.046Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"73.327\"}","timestamp":"2024-07-12T13:41:47.048Z"}
+{"level":"info","message":"User created successfully","timestamp":"2024-07-12T13:41:47.748Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"200\",\"responseTime\":\"772.843\"}","timestamp":"2024-07-12T13:41:47.750Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/login\",\"status\":\"204\",\"responseTime\":\"0.292\"}","timestamp":"2024-07-12T13:43:00.111Z"}
+{"level":"error","message":"User not approved by admin","timestamp":"2024-07-12T13:43:00.196Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"400\",\"responseTime\":\"81.298\"}","timestamp":"2024-07-12T13:43:00.198Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:44:27.238Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:45:49.934Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:45:57.338Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.811\"}","timestamp":"2024-07-12T13:46:33.871Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"1.983\"}","timestamp":"2024-07-12T13:46:33.911Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T13:46:34.133Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"248.269\"}","timestamp":"2024-07-12T13:46:34.144Z"}
+{"level":"info","message":"User created successfully","timestamp":"2024-07-12T13:46:34.744Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"200\",\"responseTime\":\"829.878\"}","timestamp":"2024-07-12T13:46:34.747Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T13:51:26.639Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"2.820\"}","timestamp":"2024-07-12T14:08:57.868Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.534\"}","timestamp":"2024-07-12T14:08:57.933Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T14:08:57.999Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"97.331\"}","timestamp":"2024-07-12T14:08:58.003Z"}
+{"level":"info","message":"User created successfully","timestamp":"2024-07-12T14:08:58.671Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"200\",\"responseTime\":\"733.442\"}","timestamp":"2024-07-12T14:08:58.673Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/login\",\"status\":\"204\",\"responseTime\":\"0.171\"}","timestamp":"2024-07-12T14:09:14.349Z"}
+{"level":"error","message":"User not approved by admin","timestamp":"2024-07-12T14:09:14.420Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"400\",\"responseTime\":\"68.841\"}","timestamp":"2024-07-12T14:09:14.422Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:15:21.925Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"3.231\"}","timestamp":"2024-07-12T14:16:01.618Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.471\"}","timestamp":"2024-07-12T14:16:01.665Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/upload-profile-image\",\"status\":\"204\",\"responseTime\":\"0.545\"}","timestamp":"2024-07-12T14:16:01.669Z"}
+{"level":"info","message":"Profile Image Uploaded Successfully","timestamp":"2024-07-12T14:16:01.724Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/upload-profile-image\",\"status\":\"200\",\"responseTime\":\"58.142\"}","timestamp":"2024-07-12T14:16:01.738Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T14:16:01.745Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"104.879\"}","timestamp":"2024-07-12T14:16:01.750Z"}
+{"level":"info","message":"User created successfully","timestamp":"2024-07-12T14:16:02.337Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"200\",\"responseTime\":\"638.998\"}","timestamp":"2024-07-12T14:16:02.339Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:19:08.463Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:19:33.125Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:19:46.511Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.594\"}","timestamp":"2024-07-12T14:22:33.698Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.281\"}","timestamp":"2024-07-12T14:22:33.732Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T14:22:33.798Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"87.614\"}","timestamp":"2024-07-12T14:22:33.803Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T14:22:37.438Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"69.434\"}","timestamp":"2024-07-12T14:22:37.439Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:23:33.987Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:23:42.643Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:23:55.190Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"1.910\"}","timestamp":"2024-07-12T14:23:58.505Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/register\",\"status\":\"204\",\"responseTime\":\"0.610\"}","timestamp":"2024-07-12T14:23:58.547Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T14:23:58.614Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"86.569\"}","timestamp":"2024-07-12T14:23:58.618Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.484\"}","timestamp":"2024-07-12T14:24:54.840Z"}
+{"level":"info","message":"Profile Image Uploaded Successfully","timestamp":"2024-07-12T14:24:54.882Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"200\",\"responseTime\":\"40.160\"}","timestamp":"2024-07-12T14:24:54.885Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-12T14:24:54.926Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"73.966\"}","timestamp":"2024-07-12T14:24:54.928Z"}
+{"level":"info","message":"User created successfully","timestamp":"2024-07-12T14:24:55.676Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:27:38.010Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/login\",\"status\":\"204\",\"responseTime\":\"2.373\"}","timestamp":"2024-07-12T14:27:39.387Z"}
+{"level":"error","message":"User not approved by admin","timestamp":"2024-07-12T14:27:39.502Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"400\",\"responseTime\":\"92.142\"}","timestamp":"2024-07-12T14:27:39.508Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/login\",\"status\":\"204\",\"responseTime\":\"0.378\"}","timestamp":"2024-07-12T14:27:45.412Z"}
+{"level":"error","message":"User not approved by admin","timestamp":"2024-07-12T14:27:45.487Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"400\",\"responseTime\":\"71.718\"}","timestamp":"2024-07-12T14:27:45.489Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:28:40.583Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:28:46.555Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:28:56.706Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:29:31.683Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:29:35.254Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-12T14:29:40.892Z"}

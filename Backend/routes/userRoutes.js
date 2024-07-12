@@ -17,10 +17,10 @@ const {
 } = require("../controllers/userController");
 
 //user can register and login using the following routes
-router.post("/register", register);
+router.post("/register", upload.single("profileImage") ,register);
 router.post("/login", login);
 router.post("/is-user", checkUserExistence);
-router.post("/upload-profile-image", upload.single("profileImage") , uploadProfileImage);
+//router.post("/upload-profile-image", upload.single("profileImage") , uploadProfileImage);
 
 //check access token on every request to the following routes
 router.use(validateToken);

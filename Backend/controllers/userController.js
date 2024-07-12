@@ -10,16 +10,26 @@ env.config();
 const register = async (req, res) => {
     try {
         const { firstName, lastName, dob, username,  email, password } = req.body;
-        console.log(req.body)
-
+        const profileImage = req.file;
+        console.log(req.file);
         //call function checkEmailAndPassword to check if the email and password are valid
-        await checkSignupFields(firstName, lastName, dob, username, email, password , res);
+        await checkSignupFields(firstName, lastName, dob, username);
+         //call function checkEmailAndPassword to check if the email and password are valid
+        await checkEmailAndPassword(email, password);
         
+        if(!req.file){
+            logger.error("Please provide an image");
+            return res.status(400).json({message: "Please provide an image"});
+        }
+        else{
+            logger.info("Profile Image Uploaded Successfully");
+            res.status(200).json({message: "Profile Image Uploaded Successfully"});
+        }
 
         //check if the user already exists
         if(await User.findOne({email})){
             logger.error("User already exists");
-            return res.status(400).json({message: "User already exists"});
+            res.status(400).json({message: "User already exists"});
         }
 
         //hash the password before storing in the database
@@ -37,14 +47,15 @@ const register = async (req, res) => {
         //check if the user was created successfully or not
         if(!user){
             logger.error("Could not be created");
-            return res.status(500).json({message: "User Registration Failed"});
+            res.status(500).json({message: "User Registration Failed"})
         }
         logger.info("User created successfully");
-        return res.status(200).json({message: "User Registered Successfully", email : user.email});
+        res.status(200).json({message: "User Registered Successfully", email : user.email});
         
     } catch (error) {
+        console.log(error);
         logger.error(error.message);
-        return res.status(500).json({error: error.message});
+        res.status(500).json({error: error.message});
     }
 }
 
@@ -99,7 +110,6 @@ const login =  async (req, res) => {
         }
 
         //check if the user is approved by the admin or not
-        console.log(isUser);
         if(!isUser.isApprovedByAdmin){
             logger.error("User not approved by admin");
             return res.status(400).json({message: "User not approved by admin. Please wait for the admin to approve your account", 
@@ -170,6 +180,7 @@ const uploadProfileImage = async (req, res) => {
         return res.status(400).json({message: "Please provide an image"});
     }
     else{
+        logger.info("Profile Image Uploaded Successfully");
         res.status(200).json({message: "Profile Image Uploaded Successfully"});
     }
 }
@@ -203,10 +214,8 @@ const checkUserExistence = async (req, res) => {
 
 
 //check all the sign up fields
-const checkSignupFields = async (firstName, lastName, dob, username, email, password , res) => {
-    //call function checkEmailAndPassword to check if the email and password are valid
-    await checkEmailAndPassword(email, password);
-
+const checkSignupFields = async (firstName, lastName, dob, username) => {
+     
     //check if any field is empty
     if(!firstName || !lastName|| !dob || !username){
         logger.error("Please fill all the fields");
@@ -221,7 +230,7 @@ const checkSignupFields = async (firstName, lastName, dob, username, email, pass
 const checkEmailAndPassword = async (email, password) => {
     //check if the email or password or empty or invalid
     if(!email || !password){
-        return res.status(400).json({message: "Please provide email and password"});
+        res.status(400).json({message: "Please provide email and password"});
     }
 
     //NOTE: No check on password length, you can add it if you want

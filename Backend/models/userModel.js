@@ -27,9 +27,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide a password']
     },
-    passwordConfirm: {
+    profileImage: {
         type: String,
-        //required: [true, 'Please confirm your password']
+        required: [true, 'Please provide ']
     },
     isApprovedByAdmin: {
         type: Boolean,
