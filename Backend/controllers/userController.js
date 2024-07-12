@@ -127,13 +127,23 @@ const login =  async (req, res) => {
 
 const getUsers = async (req, res) => {
     try {
-        const users = await User.find({isAdmin : false});
+        const users = await User.find({ isAdmin: false }).select('-password'); // Exclude password field
         if (users.length === 0) {
             logger.error("No users found");
             return res.status(404).json({ message: "No users found" });
         }
+        
+        // Modify each user object to include the full URL for the profile image
+        const baseUrl = req.protocol + '://' + req.get('host');
+        const modifiedUsers = users.map(user => {
+            return {
+                ...user.toObject(),
+                profileImagePath: user.profileImagePath ? `${baseUrl}/${user.profileImagePath}` : null
+            };
+        });
+
         logger.info("All users fetched successfully");
-        return res.status(200).json({ users });
+        return res.status(200).json({ users: modifiedUsers });
     } catch (error) {
         logger.error(error.message);
         return res.status(500).json({ error: error.message });
