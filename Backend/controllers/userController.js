@@ -1,6 +1,5 @@
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
-const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 const logger = require('../config/logger/logger.js');
 const env = require('dotenv');
@@ -203,10 +202,6 @@ const checkUserExistence = async (req, res) => {
             return res.status(200).json(false);
         }
 
-
-        //nodemailer mail sending logic
-        await sendEmail(email);
-
         logger.info(isUser.email);
         return res.status(200).json(true);
     }
@@ -256,36 +251,7 @@ const checkEmail = async (email) => {
     }
 }
 
-//send email using nodemailer
-const sendEmail = async(userEmail)=>{
-    const transporter = nodemailer.createTransport({
-        service: 'gmail', // Use your email provider
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: process.env.TRANSPORTER_EMAIL,
-            pass: process.env.TRANSPORTER_PASSWORD
-        }
-    });
 
-    const mailOptions = {
-        from: process.env.TRANSPORTER_EMAIL,
-        to: userEmail,
-        subject: 'Reset Your Password Reset!',
-        text: 'This is a test email sent from a Node.js app!'
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-            logger.error("An error occured while sending email : " , error);
-            console.log(error);
-        } else {
-            logger.info("Email sent successfully");
-            console.log('Email sent: ' + info.response);
-        }
-    });
-}
 
 //generate token for the user
 const generateToken = async (user, req , res) => {

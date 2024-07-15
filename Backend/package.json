@@ -24,6 +24,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.14",
+    "otp-generator": "^4.0.1",
     "path": "^0.12.7",
     "winston": "^3.13.0",
     "winston-mongodb": "^5.1.1"
