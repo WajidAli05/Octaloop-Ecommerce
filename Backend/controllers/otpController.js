@@ -49,31 +49,32 @@ const sendOTP = async (req, res) => {
 
 const verifyOTP = async (req, res) => {
     try {
-        const {email , otp} = req.body;
+        const { email, otp } = req.body;
 
-        //email and otp are required fields
-    if(!email.trim() || ! otp.trim()){
-        logger.warn('Email or OTP field is empty.')
-        res.status(400).json({success : false , message : 'Email or OTP field is empty.'})
-    }
+        // Check if email and otp fields are provided
+        if (!email.trim() || !otp.trim()) {
+            logger.warn('Email or OTP field is empty.');
+            return res.status(400).json({ success: false, message: 'Email or OTP field is empty.' });
+        }
 
-    const isValidOtp = Otp.findOne({userEmail : email , otp });
+        const isValidOtp = await Otp.findOneAndDelete({ userEmail: email, otp });
 
-    //if not a valid otp
-    if(!isValidOtp){
-        logger.info('Invalid OTP.');
-        res.status(404).json({success : false , message : 'Invalid OTP entered.'});
-    }
+        // Check if OTP is valid
+        if (!isValidOtp) {
+            logger.info('Invalid OTP.');
+            return res.status(404).json({ success: false, message: 'Invalid OTP entered.' });
+        }
 
-    //if otp is valid
-    logger.info(`OTP : ${otp} verified successfully for email : ${email}`);
-    res.status(200).json({success : true , message : 'OTP verification successful.'})
+        // If OTP is valid
+        logger.info(`OTP: ${otp} verified successfully for email: ${email}`);
+        return res.status(200).json({ success: true, message: 'OTP verification successful.' });
 
     } catch (error) {
-        logger.error(`OTP against ${email} could not be verified`);
-        res.status(400).json({ message: 'OTP verification unsuccessful. Try again with a new OTP.' });
+        logger.error('OTP could not be verified', error);
+        return res.status(500).json({ message: 'OTP verification unsuccessful. Try again with a new OTP.' });
     }
 }
+
 
 module.exports = {
     sendOTP,

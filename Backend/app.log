@@ -11256,3 +11256,57 @@
 {"level":"info","message":"{\"method\":\"GET\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2928.348\"}","timestamp":"2024-07-15T15:07:14.458Z"}
 {"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:07:38.187Z"}
 {"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"5.120\"}","timestamp":"2024-07-15T15:07:38.190Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:22:34.183Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"3.174\"}","timestamp":"2024-07-15T15:22:34.187Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:23:09.764Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"1.650\"}","timestamp":"2024-07-15T15:23:09.766Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:27:20.006Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"18.979\"}","timestamp":"2024-07-15T15:27:20.026Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:28:11.048Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:28:29.373Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:28:31.592Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"76.811\"}","timestamp":"2024-07-15T15:28:31.662Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:29:47.703Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:29:49.624Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"135.726\"}","timestamp":"2024-07-15T15:29:49.720Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:30:29.368Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:30:32.397Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"11.823\"}","timestamp":"2024-07-15T15:30:32.411Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:30:49.436Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:31:41.822Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:31:45.102Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"14.519\"}","timestamp":"2024-07-15T15:31:45.112Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:32:03.181Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"1.994\"}","timestamp":"2024-07-15T15:32:03.183Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:32:27.811Z"}
+{"level":"info","message":"Invalid OTP.","timestamp":"2024-07-15T15:32:29.247Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:32:51.868Z"}
+{"level":"info","message":"Invalid OTP.","timestamp":"2024-07-15T15:32:53.812Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:33:25.000Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:35:11.141Z"}
+{"level":"info","message":"Invalid OTP.","timestamp":"2024-07-15T15:35:14.324Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:37:10.125Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:37:17.723Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:37:40.883Z"}
+{"level":"info","message":"OTP : 477945 verified successfully for email : i200981@nu.edu.pk","timestamp":"2024-07-15T15:37:43.120Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"106.091\"}","timestamp":"2024-07-15T15:37:43.132Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:38:14.622Z"}
+{"level":"info","message":"Invalid OTP.","timestamp":"2024-07-15T15:38:17.745Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:39:58.326Z"}
+{"level":"info","message":"Invalid OTP.","timestamp":"2024-07-15T15:40:01.325Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"404\",\"responseTime\":\"102.491\"}","timestamp":"2024-07-15T15:40:01.333Z"}
+{"level":"error","message":"User not found against email: i200981@nu.edu.pk","timestamp":"2024-07-15T15:40:14.342Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/sendOTP\",\"status\":\"404\",\"responseTime\":\"83.285\"}","timestamp":"2024-07-15T15:40:14.345Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:40:32.069Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-15T15:40:37.983Z"}
+{"level":"info","message":"OTP: 731532 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-15T15:40:37.984Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"3002.803\"}","timestamp":"2024-07-15T15:40:37.989Z"}
+{"level":"info","message":"OTP: 731532 verified successfully for email: i200981@nu.edu.pk","timestamp":"2024-07-15T15:41:10.813Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/verifyOTP\",\"status\":\"200\",\"responseTime\":\"85.908\"}","timestamp":"2024-07-15T15:41:10.816Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:44:28.463Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:44:53.627Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:47:34.991Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-15T15:47:42.681Z"}
+{"level":"info","message":"OTP: 976140 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-15T15:47:42.683Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"3091.362\"}","timestamp":"2024-07-15T15:47:42.688Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:48:54.689Z"}
