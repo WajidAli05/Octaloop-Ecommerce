@@ -11310,3 +11310,142 @@
 {"level":"info","message":"OTP: 976140 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-15T15:47:42.683Z"}
 {"level":"info","message":"{\"method\":\"GET\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"3091.362\"}","timestamp":"2024-07-15T15:47:42.688Z"}
 {"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:48:54.689Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T15:49:12.827Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-15T15:49:19.196Z"}
+{"level":"info","message":"OTP: 379525 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-15T15:49:19.197Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2588.412\"}","timestamp":"2024-07-15T15:49:19.208Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-15T16:03:00.037Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/login\",\"status\":\"204\",\"responseTime\":\"1.561\"}","timestamp":"2024-07-15T16:03:58.464Z"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhamlkQGdtYWlsLmNvbSIsImlhdCI6MTcyMTA1OTQzOCwiZXhwIjoxNzIxMDYzMDM4fQ.QbsMrB3nHvL12t3RbbaFhn47bWleGj3FHyvX9YJ7Xkk","timestamp":"2024-07-15T16:03:58.659Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"200\",\"responseTime\":\"180.618\"}","timestamp":"2024-07-15T16:03:58.663Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"2.275\"}","timestamp":"2024-07-15T16:03:58.737Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.267\"}","timestamp":"2024-07-15T16:03:58.758Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:03:58.827Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"87.601\"}","timestamp":"2024-07-15T16:03:58.831Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"4.913\"}","timestamp":"2024-07-15T16:03:58.881Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:03:58.927Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"79.314\"}","timestamp":"2024-07-15T16:03:58.931Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.390\"}","timestamp":"2024-07-15T16:05:13.994Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-15T16:05:14.078Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"70.840\"}","timestamp":"2024-07-15T16:05:14.080Z"}
+{"level":"info","message":"User created successfully","timestamp":"2024-07-15T16:05:14.284Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/register\",\"status\":\"200\",\"responseTime\":\"288.382\"}","timestamp":"2024-07-15T16:05:14.286Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/login\",\"status\":\"204\",\"responseTime\":\"0.201\"}","timestamp":"2024-07-15T16:05:27.109Z"}
+{"level":"error","message":"User not approved by admin","timestamp":"2024-07-15T16:05:27.184Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"400\",\"responseTime\":\"72.225\"}","timestamp":"2024-07-15T16:05:27.186Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/login\",\"status\":\"204\",\"responseTime\":\"0.185\"}","timestamp":"2024-07-15T16:06:33.739Z"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhamlkQGdtYWlsLmNvbSIsImlhdCI6MTcyMTA1OTU5MywiZXhwIjoxNzIxMDYzMTkzfQ.8cIhHroHOMO53Eo-gVLQxKe10QAcWqOjPZfCXVs5BoE","timestamp":"2024-07-15T16:06:33.903Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/login\",\"status\":\"200\",\"responseTime\":\"162.331\"}","timestamp":"2024-07-15T16:06:33.906Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.708\"}","timestamp":"2024-07-15T16:06:33.965Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"6.468\"}","timestamp":"2024-07-15T16:06:33.979Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:06:34.108Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"77.719\"}","timestamp":"2024-07-15T16:06:34.110Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1721059514004_WhatsApp%20Image%202024-07-15%20at%2008.24.32_60e8e044.jpg\",\"status\":\"404\",\"responseTime\":\"1.493\"}","timestamp":"2024-07-15T16:06:34.144Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"2.879\"}","timestamp":"2024-07-15T16:06:34.152Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:06:34.197Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"81.794\"}","timestamp":"2024-07-15T16:06:34.205Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"204\",\"responseTime\":\"0.272\"}","timestamp":"2024-07-15T16:06:36.428Z"}
+{"level":"info","message":"User approved by admin successfully","timestamp":"2024-07-15T16:06:36.584Z"}
+{"level":"info","message":"{\"method\":\"PUT\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"200\",\"responseTime\":\"155.065\"}","timestamp":"2024-07-15T16:06:36.587Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"204\",\"responseTime\":\"0.311\"}","timestamp":"2024-07-15T16:06:45.476Z"}
+{"level":"info","message":"User approved by admin successfully","timestamp":"2024-07-15T16:06:45.633Z"}
+{"level":"info","message":"{\"method\":\"PUT\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"200\",\"responseTime\":\"155.151\"}","timestamp":"2024-07-15T16:06:45.635Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"204\",\"responseTime\":\"0.300\"}","timestamp":"2024-07-15T16:08:56.589Z"}
+{"level":"info","message":"User approved by admin successfully","timestamp":"2024-07-15T16:08:56.741Z"}
+{"level":"info","message":"{\"method\":\"PUT\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"200\",\"responseTime\":\"149.450\"}","timestamp":"2024-07-15T16:08:56.743Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.440\"}","timestamp":"2024-07-15T16:09:01.131Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.620\"}","timestamp":"2024-07-15T16:09:01.141Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:09:01.242Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"88.103\"}","timestamp":"2024-07-15T16:09:01.245Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"6.004\"}","timestamp":"2024-07-15T16:09:01.321Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1721059514004_WhatsApp%20Image%202024-07-15%20at%2008.24.32_60e8e044.jpg\",\"status\":\"404\",\"responseTime\":\"6.511\"}","timestamp":"2024-07-15T16:09:01.324Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:09:01.358Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"99.041\"}","timestamp":"2024-07-15T16:09:01.363Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"1.015\"}","timestamp":"2024-07-15T16:13:36.199Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:13:36.285Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"80.198\"}","timestamp":"2024-07-15T16:13:36.287Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:13:39.164Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"81.132\"}","timestamp":"2024-07-15T16:13:39.166Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:13:39.246Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"81.090\"}","timestamp":"2024-07-15T16:13:39.252Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"0.761\"}","timestamp":"2024-07-15T16:13:39.257Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1721059514004_WhatsApp%20Image%202024-07-15%20at%2008.24.32_60e8e044.jpg\",\"status\":\"404\",\"responseTime\":\"1.423\"}","timestamp":"2024-07-15T16:13:39.261Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.744\"}","timestamp":"2024-07-15T16:14:17.361Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.418\"}","timestamp":"2024-07-15T16:14:17.374Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:14:17.481Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"79.293\"}","timestamp":"2024-07-15T16:14:17.485Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1721059514004_WhatsApp%20Image%202024-07-15%20at%2008.24.32_60e8e044.jpg\",\"status\":\"404\",\"responseTime\":\"0.853\"}","timestamp":"2024-07-15T16:14:17.511Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"1.242\"}","timestamp":"2024-07-15T16:14:17.516Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:14:17.562Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"89.187\"}","timestamp":"2024-07-15T16:14:17.577Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"204\",\"responseTime\":\"0.583\"}","timestamp":"2024-07-15T16:14:20.711Z"}
+{"level":"info","message":"User approved by admin successfully","timestamp":"2024-07-15T16:14:20.860Z"}
+{"level":"info","message":"{\"method\":\"PUT\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"200\",\"responseTime\":\"146.843\"}","timestamp":"2024-07-15T16:14:20.862Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.332\"}","timestamp":"2024-07-15T16:18:01.194Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.426\"}","timestamp":"2024-07-15T16:18:01.197Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:18:01.274Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"77.405\"}","timestamp":"2024-07-15T16:18:01.278Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"0.502\"}","timestamp":"2024-07-15T16:18:01.309Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1721059514004_WhatsApp%20Image%202024-07-15%20at%2008.24.32_60e8e044.jpg\",\"status\":\"404\",\"responseTime\":\"1.087\"}","timestamp":"2024-07-15T16:18:01.312Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:18:01.359Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"75.899\"}","timestamp":"2024-07-15T16:18:01.361Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.180\"}","timestamp":"2024-07-15T16:18:58.192Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:18:58.271Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"77.861\"}","timestamp":"2024-07-15T16:18:58.273Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.252\"}","timestamp":"2024-07-15T16:19:10.294Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:19:10.378Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"80.683\"}","timestamp":"2024-07-15T16:19:10.380Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.325\"}","timestamp":"2024-07-15T16:20:29.803Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:20:29.898Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"81.464\"}","timestamp":"2024-07-15T16:20:29.900Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.252\"}","timestamp":"2024-07-15T16:21:08.828Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:21:08.912Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"82.277\"}","timestamp":"2024-07-15T16:21:08.914Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:21:11.454Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"74.073\"}","timestamp":"2024-07-15T16:21:11.455Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.242\"}","timestamp":"2024-07-15T16:21:24.552Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:21:24.627Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"74.675\"}","timestamp":"2024-07-15T16:21:24.633Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.207\"}","timestamp":"2024-07-15T16:22:57.354Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:22:57.434Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"75.555\"}","timestamp":"2024-07-15T16:22:57.436Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.631\"}","timestamp":"2024-07-15T16:23:32.379Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.626\"}","timestamp":"2024-07-15T16:23:32.396Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:23:32.520Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"114.418\"}","timestamp":"2024-07-15T16:23:32.562Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:23:32.694Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"77.731\"}","timestamp":"2024-07-15T16:23:32.696Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1721059514004_WhatsApp%20Image%202024-07-15%20at%2008.24.32_60e8e044.jpg\",\"status\":\"404\",\"responseTime\":\"0.621\"}","timestamp":"2024-07-15T16:23:32.850Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"0.654\"}","timestamp":"2024-07-15T16:23:32.853Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"204\",\"responseTime\":\"0.315\"}","timestamp":"2024-07-15T16:23:35.701Z"}
+{"level":"info","message":"User approved by admin successfully","timestamp":"2024-07-15T16:23:35.850Z"}
+{"level":"info","message":"{\"method\":\"PUT\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"200\",\"responseTime\":\"147.123\"}","timestamp":"2024-07-15T16:23:35.851Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.244\"}","timestamp":"2024-07-15T16:25:04.203Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:25:04.280Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"75.657\"}","timestamp":"2024-07-15T16:25:04.282Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.296\"}","timestamp":"2024-07-15T16:25:37.557Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.597\"}","timestamp":"2024-07-15T16:25:37.574Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:25:37.668Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"200\",\"responseTime\":\"82.417\"}","timestamp":"2024-07-15T16:25:37.671Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1721059514004_WhatsApp%20Image%202024-07-15%20at%2008.24.32_60e8e044.jpg\",\"status\":\"404\",\"responseTime\":\"1.368\"}","timestamp":"2024-07-15T16:25:37.739Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/uploads/1720800128677_profile%20image.jpg\",\"status\":\"404\",\"responseTime\":\"1.494\"}","timestamp":"2024-07-15T16:25:37.747Z"}
+{"level":"info","message":"All users fetched successfully","timestamp":"2024-07-15T16:25:37.755Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"304\",\"responseTime\":\"81.322\"}","timestamp":"2024-07-15T16:25:37.757Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"204\",\"responseTime\":\"0.440\"}","timestamp":"2024-07-15T16:25:44.295Z"}
+{"level":"info","message":"User approved by admin successfully","timestamp":"2024-07-15T16:25:44.445Z"}
+{"level":"info","message":"{\"method\":\"PUT\",\"url\":\"/user/approve-user/669548ba52de3391a54a4ceb\",\"status\":\"200\",\"responseTime\":\"147.965\"}","timestamp":"2024-07-15T16:25:44.447Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.249\"}","timestamp":"2024-07-15T16:40:19.608Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-15T16:40:19.686Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"75.864\"}","timestamp":"2024-07-15T16:40:19.688Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.403\"}","timestamp":"2024-07-15T16:42:25.341Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-15T16:42:25.414Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"71.053\"}","timestamp":"2024-07-15T16:42:25.415Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.544\"}","timestamp":"2024-07-15T16:43:11.576Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-15T16:43:11.660Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"81.627\"}","timestamp":"2024-07-15T16:43:11.661Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.172\"}","timestamp":"2024-07-15T16:43:37.168Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-15T16:43:37.244Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"74.534\"}","timestamp":"2024-07-15T16:43:37.246Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.227\"}","timestamp":"2024-07-15T16:44:00.267Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-15T16:44:00.353Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"83.420\"}","timestamp":"2024-07-15T16:44:00.354Z"}
