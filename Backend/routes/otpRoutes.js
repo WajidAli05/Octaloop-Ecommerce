@@ -7,7 +7,7 @@ const {
 
 //these are public routes therefore tokenhandler middleware is not used here.
 router.post('/sendOTP' , sendOTP);
-router.get('/verifyOTP' , verifyOTP);
+router.post('/verifyOTP' , verifyOTP);
 
 
 module.exports = router;
