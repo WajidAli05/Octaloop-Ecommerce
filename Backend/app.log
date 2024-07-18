@@ -11449,3 +11449,81 @@
 {"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.227\"}","timestamp":"2024-07-15T16:44:00.267Z"}
 {"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-15T16:44:00.353Z"}
 {"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"83.420\"}","timestamp":"2024-07-15T16:44:00.354Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.500\"}","timestamp":"2024-07-15T16:46:40.044Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-15T16:46:40.124Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"77.146\"}","timestamp":"2024-07-15T16:46:40.126Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-18T13:53:37.217Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"2.792\"}","timestamp":"2024-07-18T14:01:02.407Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T14:01:02.842Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"107.706\"}","timestamp":"2024-07-18T14:01:02.846Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"1.075\"}","timestamp":"2024-07-18T15:12:49.025Z"}
+{"level":"error","message":"Invalid Token","timestamp":"2024-07-18T15:12:49.117Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"400\",\"responseTime\":\"46.895\"}","timestamp":"2024-07-18T15:12:49.120Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.404\"}","timestamp":"2024-07-18T15:12:49.130Z"}
+{"level":"error","message":"Invalid Token","timestamp":"2024-07-18T15:12:49.141Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"400\",\"responseTime\":\"8.906\"}","timestamp":"2024-07-18T15:12:49.146Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.601\"}","timestamp":"2024-07-18T15:13:24.152Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/users\",\"status\":\"204\",\"responseTime\":\"0.370\"}","timestamp":"2024-07-18T15:13:24.161Z"}
+{"level":"error","message":"Invalid Token","timestamp":"2024-07-18T15:13:24.332Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"400\",\"responseTime\":\"15.701\"}","timestamp":"2024-07-18T15:13:24.346Z"}
+{"level":"error","message":"Invalid Token","timestamp":"2024-07-18T15:13:24.365Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/user/users\",\"status\":\"400\",\"responseTime\":\"5.214\"}","timestamp":"2024-07-18T15:13:24.369Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.252\"}","timestamp":"2024-07-18T15:38:34.832Z"}
+{"level":"error","message":"User does not exist","timestamp":"2024-07-18T15:38:34.947Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"100.023\"}","timestamp":"2024-07-18T15:38:34.949Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.203\"}","timestamp":"2024-07-18T15:38:44.943Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T15:38:45.027Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"81.817\"}","timestamp":"2024-07-18T15:38:45.029Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-18T15:44:46.802Z"}
+{"level":"info","message":"OTP: 367784 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-18T15:44:46.806Z"}
+{"level":"info","message":"{\"method\":\"GET\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2671.462\"}","timestamp":"2024-07-18T15:44:46.808Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.496\"}","timestamp":"2024-07-18T15:55:03.534Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T15:55:03.622Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"80.471\"}","timestamp":"2024-07-18T15:55:03.625Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.358\"}","timestamp":"2024-07-18T15:57:05.553Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T15:57:05.636Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"79.164\"}","timestamp":"2024-07-18T15:57:05.638Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.553\"}","timestamp":"2024-07-18T16:01:03.206Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T16:01:03.292Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"81.687\"}","timestamp":"2024-07-18T16:01:03.294Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T16:01:07.589Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"79.899\"}","timestamp":"2024-07-18T16:01:07.591Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2024-07-18T16:01:47.033Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-18T16:01:52.728Z"}
+{"level":"info","message":"OTP: 894217 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-18T16:01:52.730Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2378.101\"}","timestamp":"2024-07-18T16:01:52.736Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.806\"}","timestamp":"2024-07-18T16:02:15.887Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T16:02:15.997Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"106.745\"}","timestamp":"2024-07-18T16:02:15.999Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/sendOTP\",\"status\":\"204\",\"responseTime\":\"0.483\"}","timestamp":"2024-07-18T16:02:16.006Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-18T16:02:18.859Z"}
+{"level":"info","message":"OTP: 302347 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-18T16:02:18.861Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2850.748\"}","timestamp":"2024-07-18T16:02:18.863Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.721\"}","timestamp":"2024-07-18T16:02:28.867Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T16:02:28.939Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"71.027\"}","timestamp":"2024-07-18T16:02:28.941Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/sendOTP\",\"status\":\"204\",\"responseTime\":\"0.285\"}","timestamp":"2024-07-18T16:02:28.949Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-18T16:02:31.226Z"}
+{"level":"info","message":"OTP: 487527 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-18T16:02:31.227Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2274.647\"}","timestamp":"2024-07-18T16:02:31.229Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.194\"}","timestamp":"2024-07-18T16:06:20.408Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T16:06:20.480Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"69.670\"}","timestamp":"2024-07-18T16:06:20.481Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/sendOTP\",\"status\":\"204\",\"responseTime\":\"0.159\"}","timestamp":"2024-07-18T16:06:20.489Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-18T16:06:22.750Z"}
+{"level":"info","message":"OTP: 180785 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-18T16:06:22.752Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2260.403\"}","timestamp":"2024-07-18T16:06:22.754Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.230\"}","timestamp":"2024-07-18T16:06:29.963Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T16:06:30.038Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"72.181\"}","timestamp":"2024-07-18T16:06:30.040Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/sendOTP\",\"status\":\"204\",\"responseTime\":\"0.381\"}","timestamp":"2024-07-18T16:06:30.070Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-18T16:06:32.357Z"}
+{"level":"info","message":"OTP: 874918 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-18T16:06:32.359Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2281.536\"}","timestamp":"2024-07-18T16:06:32.360Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/user/is-user\",\"status\":\"204\",\"responseTime\":\"0.200\"}","timestamp":"2024-07-18T16:08:32.083Z"}
+{"level":"info","message":"i200981@nu.edu.pk","timestamp":"2024-07-18T16:08:32.155Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/user/is-user\",\"status\":\"200\",\"responseTime\":\"69.904\"}","timestamp":"2024-07-18T16:08:32.157Z"}
+{"level":"info","message":"{\"method\":\"OPTIONS\",\"url\":\"/sendOTP\",\"status\":\"204\",\"responseTime\":\"0.816\"}","timestamp":"2024-07-18T16:08:32.166Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2024-07-18T16:08:34.546Z"}
+{"level":"info","message":"OTP: 783728 sent successfully to email: i200981@nu.edu.pk","timestamp":"2024-07-18T16:08:34.548Z"}
+{"level":"info","message":"{\"method\":\"POST\",\"url\":\"/sendOTP\",\"status\":\"200\",\"responseTime\":\"2380.281\"}","timestamp":"2024-07-18T16:08:34.549Z"}

@@ -6,7 +6,7 @@ const {
 } = require('../controllers/otpController');
 
 //these are public routes therefore tokenhandler middleware is not used here.
-router.get('/sendOTP' , sendOTP);
+router.post('/sendOTP' , sendOTP);
 router.get('/verifyOTP' , verifyOTP);
 
 
