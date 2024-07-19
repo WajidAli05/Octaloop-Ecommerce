@@ -13,7 +13,8 @@ const {
     checkUserExistence,
     uploadProfileImage ,
     approveUser,
-    deleteUser
+    deleteUser,
+    resetPassword
 } = require("../controllers/userController");
 
 //user can register and login using the following routes
@@ -22,8 +23,12 @@ router.post("/login", login);
 router.post("/is-user", checkUserExistence);
 //router.post("/upload-profile-image", upload.single("profileImage") , uploadProfileImage);
 
+
 //check access token on every request to the following routes
 router.use(validateToken);
+//reset password route
+router.put("/reset-password", resetPassword);
+
 //admin routes for approving and rejecting a user
 router.put("/approve-user/:userId", isAdminMiddleware , approveUser);
 router.delete("/delete-user/:userId", isAdminMiddleware , deleteUser);

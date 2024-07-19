@@ -3,7 +3,7 @@ const logger = require('../config/logger/logger')
 const {sendOtpOnEmail} = require('../utils/otpSenderOnEmail');
 const {generateOtp} = require('../utils/otpGenerator');
 const User = require('../models/userModel');
-
+const generateToken = require('../utils/generateToken');
 const sendOTP = async (req, res) => {
     try {
         const { email } = req.body;
@@ -34,9 +34,24 @@ const sendOTP = async (req, res) => {
         await savedOtp.save();
 
         try {
-            const emailInfo = await sendOtpOnEmail(email, newOtp);
+            await sendOtpOnEmail(email, newOtp);
             logger.info(`OTP: ${newOtp} sent successfully to email: ${email}`);
-            res.status(200).json({ success: true, otp: newOtp });
+
+            //find user to pass to generateToken function
+            const isUser = await findUser(email);
+            //generate token for the user
+            const response = await generateToken(isUser);
+
+            //if token is not generated
+            if(!response){
+                logger.error("Token generation failed");
+                res.status(400).json({success : false , message : "Token generation failed"});
+            }
+
+            //if token is generated then send the otp and token in the response
+            res.status(200).json({ success: true, otp: newOtp,
+                                    token : response.token,
+             });
         } catch (error) {
             logger.error('OTP could not be sent! Try again.', error);
             res.status(400).json({ success: false, message: "OTP could not be sent" });
@@ -72,6 +87,22 @@ const verifyOTP = async (req, res) => {
     } catch (error) {
         logger.error('OTP could not be verified', error);
         return res.status(500).json({ message: 'OTP verification unsuccessful. Try again with a new OTP.' });
+    }
+}
+
+//find user with the email
+const findUser = async (email) => {
+    try {
+        const isUser = await User.findOne({ email });
+        if(isUser){
+            return isUser;
+        }
+        else{
+            return false;
+        }
+    } catch (error) {
+        logger.error(error.message);
+        return false;
     }
 }
 

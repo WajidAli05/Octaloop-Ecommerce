@@ -2,8 +2,10 @@ const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const logger = require('../config/logger/logger.js');
+const generateToken = require('../utils/generateToken');
 const env = require('dotenv');
 env.config();
+
 
 
 const register = async (req, res) => {
@@ -98,13 +100,13 @@ const login =  async (req, res) => {
         const isUser = await User.findOne({email});
         if(!isUser){
             logger.error("User does not exist");
-            return res.status(400).json({message: "User does not exist"});
+            return res.status(400).json({success : false , message: "User does not exist"});
         }
 
         //check if the user is approved by the admin or not
         if(!isUser.isApprovedByAdmin){
             logger.error("User not approved by admin");
-            return res.status(400).json({message: "User not approved by admin. Please wait for the admin to approve your account", 
+            return res.status(400).json({success : false , message: "User not approved by admin. Please wait for the admin to approve your account", 
                 isApprovedByAdmin: false});
         }
 
@@ -112,16 +114,26 @@ const login =  async (req, res) => {
         const isPassword = await bcrypt.compare(password, isUser.password);
         if(!isPassword){
             logger.error("Invalid Password");
-            return res.status(400).json({message: "Invalid Password"});
+            return res.status(400).json({success : false , message: "Invalid Password"});
         }
 
         //generate token for the user
-        await generateToken(isUser, req , res);
+        const response = await generateToken(isUser);
+        if(!response){
+            logger.error("Token generation failed");
+            return res.status(500).json({success : false , message: "Token generation failed"});
+        }
+
+        return res.status(200).json({success : true , message: "Login Successful", 
+            token: response.token,
+            isAdmin: isUser.isAdmin,
+            isApprovedByAdmin: isUser.isApprovedByAdmin
+        });
 
     }
     catch(error){
         logger.error(error.message);
-        return res.status(500).json({error: error.message});    }
+        return res.status(500).json({success : false , error: error.message});    }
 }
 
 const getUsers = async (req, res) => {
@@ -174,6 +186,40 @@ const getUser = async (req, res) => {
     }
 }
 
+//this is a put method to reset the password
+const resetPassword = async (req, res) => {
+    try {
+        const { password } = req.body;
+        const email = req.user.email;
+
+        //Compare new password with the old password, if same then do not allow reseting password
+        const user = await User.findOne({email});
+        const isValidPassword = await bcrypt.compare(password, user.password);
+
+        if(isValidPassword){
+            logger.error("New password cannot be the same as the old password");
+            return res.status(400).json({ success : false , message: "Create a new password which is not used before"});
+        }
+
+        //hash the password before storing in the database
+        const hashedPassword = await bcrypt.hash(password, 10);
+        
+        //update the user password with the given email
+        const isPasswordReset = await User.findOneAndUpdate({email}, {password: hashedPassword});
+        isPasswordReset.save();
+        if(!isPasswordReset){
+            logger.error("Password reset failed");
+            return res.status(500).json({message: "Password reset failed"});
+        }
+        
+        logger.info("Password reset successfully");
+        return res.status(200).json({ success : true , message: "Password reset successfully"});
+
+    } catch (error) {
+        logger.error(error.message);
+        return res.status(500).json({error: error.message});
+    }
+}
 
 // ----------------------THIS FUNCTION NOT IN USE FOR NOW----------------------//
 //user profile image upload controller
@@ -253,24 +299,6 @@ const checkEmail = async (email) => {
 
 
 
-//generate token for the user
-const generateToken = async (user, req , res) => {
-    const token = jwt.sign({email: user.email}, process.env.JWT_SECRET, {expiresIn: "1h"});
-    if(!token){
-        logger.error("Token generation failed");
-        return res.status(500).json({message: "Token generation failed"});
-    }
-    else{
-        logger.info(token);
-        return res.status(200).json({message: "Login Successful", 
-            token , 
-            isApprovedByAdmin: 
-            user.isApprovedByAdmin , 
-            isAdmin: user.isAdmin
-        });
-    }
-}
-
 module.exports = {
     register,
     login,
@@ -279,5 +307,6 @@ module.exports = {
     checkUserExistence,
     uploadProfileImage,
     approveUser,
-    deleteUser
+    deleteUser,
+    resetPassword
 }
