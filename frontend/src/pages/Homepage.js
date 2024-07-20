@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Homepage(props) {
+function Homepage() {
   return (
     <div>
-      <h1>This is home page</h1>
+      <h1>Homepage</h1>
     </div>
   )
 }

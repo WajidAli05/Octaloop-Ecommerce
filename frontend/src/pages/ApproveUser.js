@@ -6,7 +6,7 @@ function ApproveUser() {
   const [users, setUsers] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
   const [approveUserId , setApproveUserId] = useState(null);
-  
+    
   useEffect(() => {
     const fetchUsers = async () => {
       console.log('fetching users');
