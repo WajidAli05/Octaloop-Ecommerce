@@ -48,8 +48,6 @@ form{
   border-color: rgb(192, 192, 192);
 }
 
-
-
 .email , .password{
   border-color: rgb(197, 197, 197);
   border-width: 0.5px;
@@ -216,9 +214,8 @@ form{
 
 /* UsersTableView.js css starts here */
 .table-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 20px auto;
+  width: 80%;
+  margin: 50px 0px 20px 100px;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -371,17 +368,19 @@ form{
   border-radius: 10px;
 }
 
-.sidebar-expandicon{
-  
-}
 
 
-.link{
+.side-bar-link{
   text-decoration: none;
   color: white;
   text-decoration-line: none;
 }
 
+
+.side-bar-link:hover{
+  text-decoration: none;
+  color: rgb(123, 123, 255);
+}
 .expand-icon{
   display: flex;
   justify-content: center;
@@ -391,4 +390,38 @@ form{
   left: 0px;
   width: 50px;
   height: 50px;
+}
+
+
+/* TableView.js css starts here */
+.table-view-container{
+  width: 100%;
+  height: max-content;
+  position: absolute;
+  top: 20px;
+  left: 70px;
+}
+
+.stat-card-container{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 100px;
+  margin-right: 40px;
+}
+
+.stat-card{
+  width: 20%;
+  height: max-content;
+  font-size: small;
+  background-color: #fff;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 20px;
+  margin: 0px 10px;
+}
+
+/* drop shadow on hover */
+.stat-card:hover{
+  background-color: rgb(253, 252, 252) ;
 }

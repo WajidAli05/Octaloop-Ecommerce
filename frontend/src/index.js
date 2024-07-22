@@ -4,16 +4,19 @@ import './index.css';
 import App from './App';
 import { BrowserRouter} from "react-router-dom";
 //import OTP context provider
-import UserContextProvider from './contexts/UserContextProvider';
+import OtpContextProvider from './contexts/provider/OtpContextProvider';
+import UsersContextProvider from './contexts/provider/UsersContextProvider';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserContextProvider>
-        <App />
-      </UserContextProvider>
+      <UsersContextProvider>
+        <OtpContextProvider>
+          <App />
+        </OtpContextProvider>
+      </UsersContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,15 +1,15 @@
 import React, { useState , useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import  UserContext  from '../contexts/UserContext';
+import  OtpContext  from '../contexts/contexts/OtpContext';
 
 
 function OtpVerification() {
   const navigate = useNavigate();
-  const [otp, setOtp] = useState('');
+  const [newOtp, setNewOtp] = useState('');
   const [otpError, setOtpError] = useState('');
   const [otpVerifiedMsg , setOtpVerifiedMsg] = useState('');
 
-  const {user} = useContext(UserContext);
+  const {otp} = useContext(OtpContext);
 
   //function for handling input change
   const handleInputChange = (e) => {
@@ -25,7 +25,7 @@ function OtpVerification() {
       return;
     }
 
-    setOtp(value);
+    setNewOtp(value);
   };
 
 
@@ -37,7 +37,7 @@ function OtpVerification() {
   //function to verify OTP
   const verifyOTP = (e) => {
     try {
-      if (otp.trim() === '') {
+      if (newOtp.trim() === '') {
         setOtpError('The OTP is empty. Enter the OTP sent to your email address.');
         setTimeout(() => {
           setOtpError('');
@@ -52,18 +52,17 @@ function OtpVerification() {
           'Content-Type' : 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
-        body : JSON.stringify({email : user.email , otp : otp})
+        body : JSON.stringify({email : otp.email , otp : newOtp})
       })
       .then((response)=>{
         return response.json();
       })
       .then((data)=>{
         if(data.success){
-          console.log(user.email);
           setOtpVerifiedMsg('OTP verified successfully');
           setTimeout(() => {
             setOtpVerifiedMsg('');
-            setOtp('');
+            setNewOtp('');
             setOtpError('');
             navigate('/resetPassword');
           }, 3000);
@@ -97,7 +96,7 @@ function OtpVerification() {
       <input
         className='input-field'
         placeholder='OTP here'
-        value={otp}
+        value={newOtp}
         onChange={handleInputChange}
         maxLength={6}
       />

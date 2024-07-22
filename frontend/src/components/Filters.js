@@ -34,7 +34,7 @@ function Filters({onApproveUsersFirst , onPendingUsersFirst , onNewestUsersFirst
         <button className={`filter-btn ${isApprovedActive ? 'active' : ''}`} 
         onClick={()=>{
           onApproveUsersFirst();
-          handleApprovedClick()
+          handleApprovedClick();
           }}
           >Approved</button>
 

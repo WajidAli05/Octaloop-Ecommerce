@@ -1,13 +1,13 @@
 import React , {useState , useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
-import UserContext from '../contexts/UserContext';
+import OtpContext from '../contexts/contexts/OtpContext';
 
 function EmailLinkPage({open , onClose}) {
     const [email , setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
     const [emailSentMsg, setEmailSentMsg] = useState('');
 
-    const {setUser} = useContext(UserContext);
+    const {setOtp} = useContext(OtpContext);
 
     const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ function EmailLinkPage({open , onClose}) {
             setTimeout(() => {
 
             //improved over local storage
-            setUser({email});
+            setOtp({email});
               setEmailError('');
               setEmailSentMsg('');
               setEmail('');

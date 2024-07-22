@@ -16,19 +16,19 @@ function EpandedSideMenuBar({onClose}) {
       </div>
       <h1>Admin Menu</h1>
       <div className='menu-items' onClick={()=> navigate('/adminHome')}>
-        <Link to='/adminHome' className='link'>Home</Link>
+        <Link to='/adminHome' className='side-bar-link'>Home</Link>
         <HomeIcon fontSize='large' />
       </div>
       <div className='menu-items' onClick={()=> navigate('/approveUser')}>
-        <Link to='/approveUser' className='link'>Detailed View</Link>
+        <Link to='/approveUser' className='side-bar-link'>Detailed View</Link>
         <SettingsOverscanIcon fontSize='large' />
       </div>
       <div className='menu-items' onClick={()=>{navigate('/usersTableView')}}>
-        <Link to='/usersTableView' className='link'>Table View</Link>
+        <Link to='/usersTableView' className='side-bar-link'>Table View</Link>
         <TableRowsIcon fontSize='large' />
       </div>
       <div className='menu-items'>
-        <Link className='link'>Log Out</Link>
+        <Link className='side-bar-link'>Log Out</Link>
         <LogoutIcon fontSize='large' />
       </div>
     </div>
