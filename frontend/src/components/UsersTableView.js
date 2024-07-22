@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import EpandedSideMenuBar from './EpandedSideMenuBar'
+import ClosedSideMenuBar from './ClosedSideMenuBar'
 
 function UsersTableView(users) {
+    const [sideMenuOpen , setSideMenuOpen] = useState(true);
+
+    const toggleMenu = ()=>{
+        setSideMenuOpen(!sideMenuOpen);
+    }
   return (
     <div className="table-container">
-              {console.log(users)}
+        {sideMenuOpen ? <ClosedSideMenuBar onOpen={toggleMenu}/> : <EpandedSideMenuBar onClose={toggleMenu} />}
         <table className="users-table">
             <thead>
                 <tr>

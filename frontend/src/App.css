@@ -121,10 +121,13 @@ form{
 .users-container-div{
   width: 80%;
   margin: 20px 0px;
+  padding-left: 120px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 .user-div{
+  width: 300px;
+  height: max-content;
   margin: 10px 10px;
   padding: 10px;
   border: 1px solid rgb(192, 192, 192);
@@ -151,8 +154,8 @@ form{
 }
 
 .profile-image{
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border: 1px solid rgb(192, 192, 192);
   border-radius: 50%;
   margin: 0px auto;
@@ -306,7 +309,7 @@ form{
   border-bottom: #ddd solid 1px;
 }
 
-.menu-items:hover , .menu-control:hover{
+.menu-items:hover , .menu-control:hover , .expand-icon:hover{
   background-color: rgb(30, 30, 255);
   color: white;
   border: #ddd solid 1px;
@@ -369,9 +372,23 @@ form{
 }
 
 .sidebar-expandicon{
-  padding: 20px 0px;
-  border: none;
+  
 }
 
 
+.link{
+  text-decoration: none;
+  color: white;
+  text-decoration-line: none;
+}
 
+.expand-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+}

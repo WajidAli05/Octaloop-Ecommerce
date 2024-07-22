@@ -7,7 +7,7 @@ import ApproveUser from './pages/ApproveUser'
 import OtpVerification from './pages/OtpVerification';
 import ResetPassword from './pages/ResetPassword';
 import UsersTableView from './components/UsersTableView';
-import AdminDashboard from './pages/AdminDashboard';
+import AdminHome from './pages/AdminHome';
 import { useEffect } from 'react';
 
 import { Routes, Route} from "react-router-dom";
@@ -27,7 +27,7 @@ function App() {
         <Route path='/otpVerification' element = {<OtpVerification />} />
         <Route path='/resetPassword' element = {<ResetPassword />} />
         <Route path='/usersTableView' element = {<UsersTableView />} />
-        <Route path='/adminDashboard' element = {<AdminDashboard />} />
+        <Route path='/AdminHome' element = {<AdminHome />} />
       </Routes>
     </div>
   );

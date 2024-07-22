@@ -74,7 +74,7 @@ function LoginPage() {
 
             //if user is admin then navigate to the approve user page else navigate to the homepage
             if(data.isAdmin){
-              navigate("/approveUser");
+              navigate("/AdminHome");
             }
             else{
               navigate("/homepage");
@@ -98,6 +98,7 @@ function LoginPage() {
 
   return (
     <div className='login-main-div'>
+      
       <h1 id='facebook-logo-txt'>MART</h1>
       <div className='login-div'>
             <div className='login-fields-div'>

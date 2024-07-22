@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Filters from '../components/Filters';
+import EpandedSideMenuBar from '../components/EpandedSideMenuBar'
+import ClosedSideMenuBar from '../components/ClosedSideMenuBar'
 
 function ApproveUser() {
   const [error, setError] = useState('');
   const [users, setUsers] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
   const [approveUserId , setApproveUserId] = useState(null);
+  const [sideMenuOpen , setSideMenuOpen] = useState(true);
+
+  const toggleMenu = ()=>{
+      setSideMenuOpen(!sideMenuOpen);
+  }
     
   useEffect(() => {
     const fetchUsers = async () => {
@@ -155,6 +162,9 @@ const showOldestUsersFirst = () => {
   return (
     <div className='container'>
 
+      {/* display side bar menu */}
+      {sideMenuOpen ? <ClosedSideMenuBar onOpen={toggleMenu}/> : <EpandedSideMenuBar onClose={toggleMenu} />}
+
       <Filters onApproveUsersFirst = {showApprovedUsersFirst}
                 onPendingUsersFirst = {showPendingUsersFirst}
                 onNewestUsersFirst = {showNewestUsersFirst}
@@ -164,7 +174,6 @@ const showOldestUsersFirst = () => {
       <div className='users-container-div'>
         {users.map((user) => (
           <div key={user._id} className='user-div'>
-            {console.log('Image path' , user.profileImagePath)}
             <img className='profile-image' src={user.profileImagePath} alt={user.username} />
             <p>Name: {user.firstName || ''}</p>
             <p>Last Name: {user.lastName || ''}</p>

@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import ApproveUser from './ApproveUser'
-import UsersTableView from '../components/UsersTableView'
 import EpandedSideMenuBar from '../components/EpandedSideMenuBar'
 import ClosedSideMenuBar from '../components/ClosedSideMenuBar'
 
-function AdminDashboard() {
+function AdminHome() {
     const [sideMenuOpen , setSideMenuOpen] = useState(true);
 
     const toggleMenu = ()=>{
@@ -13,11 +11,10 @@ function AdminDashboard() {
     
   return (
     <div>
-        {sideMenuOpen ? <ClosedSideMenuBar onOpen={toggleMenu}/> : <EpandedSideMenuBar onClose={toggleMenu} />}
-      {/* <ApproveUser />
-      <UsersTableView /> */}
+      <h1>Admin Home</h1>
+      {sideMenuOpen ? <ClosedSideMenuBar onOpen={toggleMenu}/> : <EpandedSideMenuBar onClose={toggleMenu} />}
     </div>
   )
 }
 
-export default AdminDashboard
+export default AdminHome;
