@@ -10,6 +10,12 @@ import { Tooltip } from '@mui/material';
 
 function ClosedSideMenuBar({onOpen}) {
   const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.clear();
+    navigate('/login');
+  }
+
   return (
     <div className='closed-side-menu-bar'>
         <Tooltip title='Expand Menu' placement='right' arrow>
@@ -33,7 +39,7 @@ function ClosedSideMenuBar({onOpen}) {
           </div>
       </Tooltip>
       <Tooltip title='Logout' placement='right' arrow>
-        <div className='closedmenu-items'>
+        <div className='closedmenu-items' onClick={()=>{logout()}} >
           <LogoutIcon fontSize='medium' />
         </div>
       </Tooltip>

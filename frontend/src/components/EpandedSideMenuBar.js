@@ -9,6 +9,11 @@ import HomeIcon from '@mui/icons-material/Home';
 function EpandedSideMenuBar({onClose}) {
   const navigate = useNavigate();
 
+  const logout = () => {
+    localStorage.clear();
+    navigate('/login');
+  }
+
   return (
     <div className='side-menu-bar'>
       <div className='menu-control' onClick={onClose}>
@@ -27,7 +32,7 @@ function EpandedSideMenuBar({onClose}) {
         <Link to='/usersTableView' className='side-bar-link'>Table View</Link>
         <TableRowsIcon fontSize='medium' />
       </div>
-      <div className='menu-items'>
+      <div className='menu-items' onClick={()=>{logout()}} >
         <Link className='side-bar-link'>Log Out</Link>
         <LogoutIcon fontSize='medium' />
       </div>

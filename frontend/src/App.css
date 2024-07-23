@@ -254,8 +254,17 @@ form{
   background-color: #f1f1f1;
 }
 
-.edit-button,
-.delete-button {
+/* .success-message{
+  color: green;
+  font-size: small;
+} */
+
+.error-message{
+  color: red;
+  font-size: small;
+}
+.approve-btn,
+.delete-btn {
   padding: 8px 12px;
   margin: 0 5px;
   border: none;
@@ -263,21 +272,26 @@ form{
   cursor: pointer;
 }
 
-.edit-button {
+.approve-btn {
   background-color: #4caf50;
   color: white;
 }
-
-.edit-button:hover {
+.approve-btn:hover {
   background-color: #45a049;
 }
 
-.delete-button {
+.approve-btn[disabled] {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+.delete-btn {
   background-color: #f44336;
   color: white;
 }
 
-.delete-button:hover {
+.delete-btn:hover {
   background-color: #e53935;
 }
 
@@ -342,7 +356,7 @@ form{
   position: fixed;
   top: 0;
   left: 0;
-  width: 70px;
+  width: 40px;
   height: 100%;
   background-color: rgb(61, 61, 248);
   color: white;

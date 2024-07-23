@@ -16,6 +16,14 @@ function TableView() {
         setSideMenuOpen(!sideMenuOpen);
     }
 
+    const findNewRegistrations = (users) => {
+        const oneDayAgo = new Date();
+        oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+    
+        const newRegistrations = users.filter(user => new Date(user.createdAt) > oneDayAgo);
+        return newRegistrations.length;
+    };
+
     return (
         <div className='table-view-container'>
             {sideMenuOpen ? <ClosedSideMenuBar onOpen={toggleMenu} /> : <ExpandedSideMenuBar onClose={toggleMenu} />}
@@ -33,7 +41,8 @@ function TableView() {
                     <p>Approved : {approvedUsers}</p>
                 </div>
                 <div className='stat-card' >
-                    asdfS
+                <h4>New Users Since Yesterday</h4>
+                <p>New : {findNewRegistrations(fetchedUsers)}</p>
                 </div>
             </div>
             <UsersTable users={fetchedUsers} />
