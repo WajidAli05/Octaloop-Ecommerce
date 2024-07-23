@@ -14,27 +14,27 @@ function ClosedSideMenuBar({onOpen}) {
     <div className='closed-side-menu-bar'>
         <Tooltip title='Expand Menu' placement='right' arrow>
           <div className='expand-icon' onClick={onOpen} >
-            <ArrowCircleRightIcon className='sidebar-expandicon' fontSize='large' />
+            <ArrowCircleRightIcon className='sidebar-expandicon' fontSize='medium' />
           </div>
         </Tooltip>
       <Tooltip title='Home' placement='right' arrow>
         <div className='closedmenu-items' onClick={()=> navigate('/adminHome')}>
-          <HomeIcon fontSize='large' />
+          <HomeIcon fontSize='medium' />
         </div>
       </Tooltip>
       <Tooltip title='Detailed view' placement='right' arrow>
         <div className='closedmenu-items' onClick={()=> navigate('/approveUser')}>
-          <SettingsOverscanIcon fontSize='large' />
+          <SettingsOverscanIcon fontSize='medium' />
         </div>
       </Tooltip>
       <Tooltip title='Table View' placement='right' arrow>
         <div className='closedmenu-items' onClick={()=>{navigate('/usersTableView')}}>
-            <TableRowsIcon fontSize='large' />
+            <TableRowsIcon fontSize='medium' />
           </div>
       </Tooltip>
       <Tooltip title='Logout' placement='right' arrow>
         <div className='closedmenu-items'>
-          <LogoutIcon fontSize='large' />
+          <LogoutIcon fontSize='medium' />
         </div>
       </Tooltip>
     </div>

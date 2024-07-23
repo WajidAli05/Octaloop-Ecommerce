@@ -134,6 +134,7 @@ form{
   flex-direction: column;
   justify-content: flex-start;
   box-shadow: -3px -3px 10px 5px rgb(204, 204, 204);
+  font-size: small;
 }
 
 .btn-div{
@@ -169,6 +170,10 @@ form{
   border: 1px solid rgb(192, 192, 192);
   width: 160px;
   height: 40px ;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .filter-btn:hover{

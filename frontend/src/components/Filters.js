@@ -1,4 +1,10 @@
 import React , { useState } from 'react'
+import PersonOffIcon from '@mui/icons-material/PersonOff';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import PersonIcon from '@mui/icons-material/Person';
+import HourglassFullIcon from '@mui/icons-material/HourglassFull';
+
+import { Tooltip } from '@mui/material';
 
 function Filters({onApproveUsersFirst , onPendingUsersFirst , onNewestUsersFirst , onOldestUsersFirst}) {
 
@@ -31,32 +37,48 @@ function Filters({onApproveUsersFirst , onPendingUsersFirst , onNewestUsersFirst
     <div className='container'>
       <div className='filters-container'>
         <p>Apply Filters : </p>
-        <button className={`filter-btn ${isApprovedActive ? 'active' : ''}`} 
-        onClick={()=>{
-          onApproveUsersFirst();
-          handleApprovedClick();
+        <Tooltip title='Approved' placement='top' arrow>
+          <button className={`filter-btn ${isApprovedActive ? 'active' : ''}`} 
+          onClick={()=>{
+            onApproveUsersFirst();
+            handleApprovedClick();
+            }}
+            >Approved
+            <VerifiedUserIcon fontSize='small' />
+            </button>
+        </Tooltip>
+
+        <Tooltip title='Pending' placement='top' arrow>
+          <button className={`filter-btn ${isPendingActive ? 'active' : ''}`} 
+          onClick={()=>{
+            onPendingUsersFirst();
+            handlePendingClick()}}
+            >Pending 
+            <PersonOffIcon fontSize='small' /> 
+            </button>
+        </Tooltip>
+
+        <Tooltip title='Newest' placement='top' arrow> 
+          <button className={`filter-btn ${isNewestActive ? 'active' : ''}`} 
+          onClick={()=>{
+            onNewestUsersFirst();
+            handleNewestClick();
           }}
-          >Approved</button>
+          >Newest 
+          <PersonIcon fontSize='small' />
+          </button>
+        </Tooltip>
 
-        <button className={`filter-btn ${isPendingActive ? 'active' : ''}`} 
-        onClick={()=>{
-          onPendingUsersFirst();
-          handlePendingClick()}}
-          >Pending</button>
-
-        <button className={`filter-btn ${isNewestActive ? 'active' : ''}`} 
-        onClick={()=>{
-          onNewestUsersFirst();
-          handleNewestClick();
-        }}
-        >Newest</button>
-
-        <button className={`filter-btn ${isOldestActive ? 'active' : ''}`} 
-        onClick={()=>{
-          onOldestUsersFirst();
-          handleOldestClick();
-        }}
-        >Oldest</button>
+        <Tooltip title='Oldest' placement='top' arrow> 
+          <button className={`filter-btn ${isOldestActive ? 'active' : ''}`} 
+          onClick={()=>{
+            onOldestUsersFirst();
+            handleOldestClick();
+          }}
+          >Oldest
+          <HourglassFullIcon fontSize='small' />
+          </button>
+        </Tooltip>
     </div>
     {/* <div>
       {error && <p>{error}</p>}
