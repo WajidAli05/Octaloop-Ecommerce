@@ -444,3 +444,26 @@ form{
 .stat-card:hover{
   background-color: rgb(253, 252, 252) ;
 }
+
+
+/* charts css starts here */
+.charts-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.piechart , .barchart{
+  border-radius: 20px;
+  margin: 0px 50px;
+}
+
+.piechart:hover , .barchart:hover{
+  background-color: rgb(253, 252, 252);
+  border: 1px solid rgb(216, 216, 216);
+}
+
+h2 , h1{
+  color: rgb(122, 122, 122);
+}

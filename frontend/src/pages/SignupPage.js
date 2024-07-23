@@ -44,13 +44,13 @@ const checkWhiteSpacesInFields = async (firstName, lastName, username, email, pa
     return
   }
 
-  else if (username.trim().includes(' ')) {
-    setUsernameError("Can not contain spaces.");
-    setTimeout(() => {
-      setUsernameError('');
-    }, 3000);
-    return
-  }
+  // else if (username.trim().includes(' ')) {
+  //   setUsernameError("Can not contain spaces.");
+  //   setTimeout(() => {
+  //     setUsernameError('');
+  //   }, 3000);
+  //   return
+  // }
 
   else if (email.trim().includes(' ')) {
     setEmailError("Can not contain spaces.");
