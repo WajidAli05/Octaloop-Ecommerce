@@ -14,6 +14,7 @@ dbConnection();
 //import user router
 const userRouter = require("./routes/userRoutes");
 const otpRouter = require('./routes/otpRoutes.js');
+const productRouter = require('./routes/productRoutes.js');
 
 
 const morganFormat = ':method :url :status :response-time ms';
@@ -39,7 +40,7 @@ app.use(cors());
 //use user router
 app.use("/user", userRouter);
 app.use('/' , otpRouter);
-
+app.use('/' , productRouter);
 //create app.listen and use PORT from .env file
 const PORT = process.env.PORT || 5000;
 

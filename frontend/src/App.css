@@ -539,8 +539,8 @@ h2 , h1{
 /* Homepage css starts here */
 .homepage-container{
   margin-top:100px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 10px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -601,8 +601,8 @@ h2 , h1{
 /* Products filters css starts here */
 .product-filters-container{
   display: flex;
-  justify-content: start;
-  align-items: center;
+  justify-content: flex-start;
+  align-items:flex-start;
   margin: 20px 0px;
   flex-direction: column;
   border-right: 1px solid rgb(192, 192, 192);
@@ -613,19 +613,70 @@ h2 , h1{
 
 .product-filters-container > div{
   display: flex;
-  justify-content: start;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
-}
-
-.product-filters-container > div > div{
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-direction: row;
 }
 
 .product-filters-container > div > button{
   width: 130px;
   height: 30px;
+  background-color: rgb(30, 30, 255);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+.product-filters-container h3{
+  font-size: medium;
+}
+
+.price > div{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0px;
+  margin-top: 10px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 10px;
+}
+
+
+input[type='range'] {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 2px; /* Specified height */
+  background: #000; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Slightly transparent */
+  transition: opacity .15s ease-in-out; /* Transition for hover effect */
+  border-radius: 20px; /* Rounded corners */
+}
+
+input[type='range']:hover {
+  opacity: 1; /* Fully opaque on hover */
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 20px; /* Thumb width */
+  height: 20px; /* Thumb height */
+  background: rgb(30, 30, 255); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%; /* Circular thumb */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 25px; /* Thumb width */
+  height: 25px; /* Thumb height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%; /* Circular thumb */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Shadow for depth */
 }

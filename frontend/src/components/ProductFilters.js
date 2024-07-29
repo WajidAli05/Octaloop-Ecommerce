@@ -1,11 +1,21 @@
 import React from 'react'
 
 function ProductFilters() {
+  const [price, setPrice] = React.useState(0);
+
   return (
     <div className='product-filters-container'>
       <div className='price'>
         <h3>Price</h3>
-        <input type='range' min='0' max='100' />
+        <input type='range' 
+        min='0'
+        max='100'
+        value={price}
+        onChange={(e)=> setPrice(e.target.value)}
+        />
+        <div>
+          <p>{price}</p>
+        </div>
         <button>Apply</button>
       </div>
       <div className='fit'>
