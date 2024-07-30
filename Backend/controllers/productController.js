@@ -14,6 +14,7 @@ const addProduct = async (req, res) => {
             sku,
             discountRate,
             quantity,
+            customerCategory,
             type,
             fit
         } = req.body;
@@ -22,7 +23,7 @@ const addProduct = async (req, res) => {
         const productImagePath = req.file ? req.file.path : '';
 
         //check required attributes can not be empty
-        if(!checkEmptyFields(name , description , price , size , color , productImagePath , category , sku , discountRate , quantity , type , fit)){
+        if(!checkEmptyFields(name , description , price , size , color , productImagePath , category , sku , discountRate , quantity , customerCategory , type , fit)){
             logger.info('One or more product fields are empty.');
             return res.status(400).json({ success : false , message : 'One or more product fields are empty.'})
         }
@@ -36,7 +37,7 @@ const addProduct = async (req, res) => {
 
         const newProduct = await Product.create({
             name,description,price,size,color,image : productImagePath,
-            category,sku,discountRate,quantity,type,fit
+            category,sku,discountRate,quantity,customerCategory,type,fit
         });
         newProduct.save();
 
@@ -56,9 +57,9 @@ const addProduct = async (req, res) => {
 //get all the products
 const getProducts = async (req, res) => {
     try {
-        const products = await Product.find({});
+        const products = await Product.find();
         logger.info('Products fetched successfully');
-        return res.status(200).json({ success: true, data: products });
+        return res.status(200).json({ success: true, products });
     } catch (error) {
         logger.error(error.message);
         return res.status(500).json({success : false , message : error.message });
@@ -154,9 +155,9 @@ const deleteProduct = async (req, res) => {
 
 
 // ***********************Additional Functions for clean coding*****************************
-const checkEmptyFields = async (name , description , price , size , color , productImagePath , category , sku , discountRate , quantity , type , fit)=>{
+const checkEmptyFields = async (name , description , price , size , color , productImagePath , category , sku , discountRate , quantity , customerCategory , type , fit)=>{
     //if condition on all the fields
-    if(!name || !description || !price || !size || !color || !productImagePath || !category || !sku || !discountRate || !quantity || !type || !fit){
+    if(!name || !description || !price || !size || !color || !productImagePath || !category || !sku || !discountRate || !quantity || !customerCategory || !type || !fit){
         return false;
     }
     else{

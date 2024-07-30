@@ -47,6 +47,12 @@ const productSchema = new mongoose.Schema({
         type : Number,
         default : 1
     },
+    customerCategory : {
+        type : String,
+        required : true,
+        enum: ['Men' , 'Women' , 'Kids']
+    }
+    ,
     type : {
         type : String,
         required : true,
