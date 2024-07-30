@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
     },
     image:{
         type : String,
-        default : false
+        required : true
     },
     category:{
         type : String,
@@ -50,7 +50,7 @@ const productSchema = new mongoose.Schema({
     type : {
         type : String,
         required : true,
-        enum : ['Shirt' , 'Pant' , 'Trouser' , 'Coat' , 'Hoddie' , 'T-Shirt' , 'Polo' , 'Jeans' , 'Shorts' , 'Jacket']
+        enum : ['Shirt' , 'Pant' , 'Trouser' , 'Coat' , 'Hoddie' , 'T-Shirt' , 'Polo' , 'Jeans' , 'Shorts' , 'Jacket' , 'Shoes']
     },
     fit : {
         type : String,

@@ -18,8 +18,11 @@ const addProduct = async (req, res) => {
             fit
         } = req.body;
 
+        //get product image path
+        const productImagePath = req.file ? req.file.path : '';
+
         //check required attributes can not be empty
-        if(!checkEmptyFields(name , description , price , size , color , category , sku , discountRate , quantity , type , fit)){
+        if(!checkEmptyFields(name , description , price , size , color , productImagePath , category , sku , discountRate , quantity , type , fit)){
             logger.info('One or more product fields are empty.');
             return res.status(400).json({ success : false , message : 'One or more product fields are empty.'})
         }
@@ -32,7 +35,7 @@ const addProduct = async (req, res) => {
         }
 
         const newProduct = await Product.create({
-            name,description,price,size,color,
+            name,description,price,size,color,image : productImagePath,
             category,sku,discountRate,quantity,type,fit
         });
         newProduct.save();
@@ -45,6 +48,7 @@ const addProduct = async (req, res) => {
         return res.status(201).json({ success : true , data : newProduct});
 
     } catch (error) {
+        console.log(error);
         logger.error(error.message);
         return res.status(400).json({success : false , message : error.message});
     }
@@ -150,9 +154,9 @@ const deleteProduct = async (req, res) => {
 
 
 // ***********************Additional Functions for clean coding*****************************
-const checkEmptyFields = async (name , description , price , size , color , category , sku , discountRate , quantity , type , fit)=>{
+const checkEmptyFields = async (name , description , price , size , color , productImagePath , category , sku , discountRate , quantity , type , fit)=>{
     //if condition on all the fields
-    if(!name || !description || !price || !size || !color || !category || !sku || !discountRate || !quantity || !type || !fit){
+    if(!name || !description || !price || !size || !color || !productImagePath || !category || !sku || !discountRate || !quantity || !type || !fit){
         return false;
     }
     else{
@@ -163,7 +167,8 @@ const checkEmptyFields = async (name , description , price , size , color , cate
 
 
 
-module.exports = { getProducts,
+module.exports = { 
+    getProducts,
     getProduct,
     addProduct,
     deleteProduct,

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const validateToken = require("../middlesware/tokenHandlerMiddleware.js");
-const upload = require("../middlesware/upload.js");
+const upload = require("../middlesware/userUpload.js");
 const isAdminMiddleware = require("../middlesware/adminAccessMiddleware.js");
 
 //import controller functions for each route from contollers directory
