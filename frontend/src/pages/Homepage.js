@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard';
 import ProductFilters from '../components/ProductFilters';
 import CircularProgress from '@mui/material/CircularProgress';
 import NoProductsFound from '../components/NoProductsFound';
-
+import ExpendedProduct from '../components/ExpendedProduct';
 
 function Homepage() {
   const [products, setProducts] = useState([]);
@@ -14,7 +14,6 @@ function Homepage() {
   const [size, setSize] = useState([]);
   const [fit, setFit] = useState([]);
   const [discount, setDiscount] = useState(0);
-
 
   useEffect(() => {
     const url = 'http://localhost:3001/products';
@@ -130,6 +129,8 @@ const showAllProducts = () => {
       {!loading && filteredProducts.length > 0 && filteredProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
+      {console.log(products[7])}
+      {/* <ExpendedProduct product={products[7]} /> */}
     </div>
   );
 }

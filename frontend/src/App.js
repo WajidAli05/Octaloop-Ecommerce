@@ -8,7 +8,6 @@ import OtpVerification from './pages/OtpVerification';
 import ResetPassword from './pages/ResetPassword';
 import UsersTable from './pages/TableView';
 import AdminHome from './pages/AdminHome';
-import { useEffect } from 'react';
 
 import { Routes, Route } from "react-router-dom";
 
