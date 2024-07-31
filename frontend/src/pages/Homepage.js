@@ -4,7 +4,6 @@ import ProductCard from '../components/ProductCard';
 import ProductFilters from '../components/ProductFilters';
 import CircularProgress from '@mui/material/CircularProgress';
 import NoProductsFound from '../components/NoProductsFound';
-import Badge from '@mui/material/Badge';
 
 
 function Homepage() {
@@ -89,9 +88,31 @@ function Homepage() {
     return { min, max };
   }
 
+  //show only men products only
+  const showMenProducts = () => {
+    setFilteredProducts(products.filter(product => product.customerCategory === 'Men' ));
+  }
+
+  const showWomenProducts = () => {
+    setFilteredProducts(products.filter(product => product.customerCategory === 'Women' ));
+  }
+  const showKidsProducts = () => {
+    setFilteredProducts(products.filter(product => product.customerCategory === 'Kids' ));
+  }
+
+//show all products
+const showAllProducts = () => {
+  setFilteredProducts(products);
+}
+
   return (
     <div className='homepage-container'>
-      <Navbar />
+      <Navbar 
+      onMenProducts = {showMenProducts}
+      onWomenProducts = {showWomenProducts}
+      onKidsProducts = {showKidsProducts}
+      onShowAllProducts = {showAllProducts}
+       />
       <ProductFilters
         price={price}
         setPrice={setPrice}
@@ -107,11 +128,7 @@ function Homepage() {
       {loading && <CircularProgress />} 
       {!loading && filteredProducts.length === 0 && <NoProductsFound />} 
       {!loading && filteredProducts.length > 0 && filteredProducts.map((product) => (
-        product.discountRate === 0 ? 
-        <ProductCard key={product.id} product={product} /> :
-        <Badge badgeContent={`${product.discountRate} %`} color='error' >
-          <ProductCard key={product.id} product={product} />
-        </Badge>
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useRef , useState } from 'react'
 
 //Material UI icons import
 import { Tooltip } from '@mui/material';
@@ -7,14 +7,19 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import LoginIcon from '@mui/icons-material/Login';
 
 
-function Navbar() {
+function Navbar({onMenProducts , onWomenProducts , onKidsProducts , onShowAllProducts}) {
+    //use ref to get the value of the input field
+    const searchValue = useRef('');
+    const [searchClicked , setSearchClicked] = useState(false);
+
   return (
     <nav className='navbar'>
         <div className='categories-links-div'>
             <ul className='categories-links'>
-                <li>Women</li>
-                <li>Men</li>
-                <li>Kids</li>
+                <li onClick={()=>onShowAllProducts()} >All</li>
+                <li onClick={()=>onWomenProducts()} >Women</li>
+                <li onClick={()=>onMenProducts()} >Men</li>
+                <li onClick={()=>onKidsProducts()} >Kids</li>
             </ul>
         </div>
         <div>
@@ -22,11 +27,16 @@ function Navbar() {
         </div>
         <div className='navbar-icons-div'>
             <ul className='navbar-icons'> 
-                <li>
+                {!searchClicked && <li onClick={()=>setSearchClicked(!searchClicked)}>
                     <Tooltip title='Search' placement='top' arrow>
                         <SearchIcon />
                     </Tooltip>
                 </li>
+                }
+                {searchClicked && <li className='seach-li' >
+                    <input type='text' ref={searchValue} placeholder='Search' />
+                </li>
+                }
                 <li>
                     <Tooltip title='Cart' placement='top' arrow>
                         <LocalMallIcon />
