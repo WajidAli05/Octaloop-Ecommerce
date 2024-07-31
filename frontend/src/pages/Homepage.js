@@ -104,15 +104,15 @@ const showAllProducts = () => {
   setFilteredProducts(products);
 }
 
-  return (
-    <div className='homepage-container'>
+  return ( // className='homepage-container'
+    <div>
       <Navbar 
       onMenProducts = {showMenProducts}
       onWomenProducts = {showWomenProducts}
       onKidsProducts = {showKidsProducts}
       onShowAllProducts = {showAllProducts}
        />
-      <ProductFilters
+      {/* <ProductFilters
         price={price}
         setPrice={setPrice}
         size={size}
@@ -124,13 +124,16 @@ const showAllProducts = () => {
         onApplyFilters={applyFilters}
         minMaxPrice={findMinMaxPrice}
       />
+
       {loading && <CircularProgress />} 
       {!loading && filteredProducts.length === 0 && <NoProductsFound />} 
       {!loading && filteredProducts.length > 0 && filteredProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
+      ))} */}
+
+{products.map((product) => (
+        <ExpendedProduct key={product.id} product={product} />
       ))}
-      {console.log(products[7])}
-      {/* <ExpendedProduct product={products[7]} /> */}
     </div>
   );
 }
