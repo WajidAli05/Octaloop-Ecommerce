@@ -751,8 +751,63 @@ input[type='range']::-moz-range-thumb {
 
 .expanded-div{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items:start;
   margin: 150px 10px;
   gap: 20px;	
 }
+
+.expanded-div > div{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.cart-quantity-div{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.outline{
+  height: 43px;
+  border: 1px solid rgb(131, 131, 131);
+  border-radius: 10px;
+}
+
+.product-info-table-div{
+  margin: 50px 0px;
+}
+
+.discount-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 100px;
+}
+
+.stock-div {
+  width: 25%;
+  border: 1px solid rgb(30, 30, 255);;
+  padding: 5px 0px;
+  border-radius: 10px;
+}
+
+.discount-div {
+  width: 50%;
+  color: red;
+  border: 1px solid red;
+  padding: 5px 10px;
+  border-radius: 10px;
+  animation: fastBeat 1s infinite;
+}
+
+@keyframes fastBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
