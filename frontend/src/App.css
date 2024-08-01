@@ -554,14 +554,28 @@ h2 , h1{
 
 /* Homepage css starts here */
 .homepage-container{
+  margin-top: 100px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0px 10px;
-  flex-wrap: wrap;
 }
 
+.products-div{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}
 
+.fitlers-div{
+  position: relative;
+  top: -450px;
+  left: 15px;
+  width: 13%;
+  margin: auto 20px;
+}
 
 /* Product card css starts here */
 .product-card {
@@ -616,7 +630,7 @@ h2 , h1{
   border-right: 1px solid rgb(192, 192, 192);
   border-bottom: 1px solid rgb(192, 192, 192);
   border-bottom-right-radius: 10px;
-  padding: 20px 40px 20px 0px;
+  padding: 20px 10px 20px 0px;
 
   /* position: relative;
   top: 15px;

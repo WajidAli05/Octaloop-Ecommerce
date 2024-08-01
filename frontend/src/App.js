@@ -8,6 +8,7 @@ import OtpVerification from './pages/OtpVerification';
 import ResetPassword from './pages/ResetPassword';
 import UsersTable from './pages/TableView';
 import AdminHome from './pages/AdminHome';
+import ExpendedProduct from './components/ExpendedProduct';
 
 import { Routes, Route } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/resetPassword' element = {<ResetPassword />} />
         <Route path='/otpVerification' element = {<OtpVerification />} />
         <Route path="/homepage" element={<Homepage />} />
+        <Route path="/homepage/:productName" element={<ExpendedProduct />} />
         <Route path="/approveUser" element={<ApproveUser />} />
         <Route path='/usersTableView' element = {<UsersTable />} />
         <Route path='/AdminHome' element = {<AdminHome />} />
