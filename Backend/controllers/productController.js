@@ -66,6 +66,58 @@ const getProducts = async (req, res) => {
     }
 };
 
+//get men products
+const getMenProducts = async (req, res) => {
+    try {
+        const menProducts = await Product.find({customerCategory : 'Men'});
+        if(!menProducts){
+            logger.info('Men products not found');
+            return res.status(404).json({ success : false , message : 'Men products not found'});
+        }
+
+        logger.info('Men products fetched successfully');
+        return res.status(200).json({ success: true, data: menProducts });
+
+    } catch (error) {
+        logger.error(error.message);
+        return res.status(500).json({success : false , message : error.message});
+    }
+}
+
+const getWomenProducts = async (req, res) => {
+    try {
+        const menProducts = await Product.find({customerCategory : 'Women'});
+        if(!menProducts){
+            logger.info('Women products not found');
+            return res.status(404).json({ success : false , message : 'Women products not found'});
+        }
+
+        logger.info('Women products fetched successfully');
+        return res.status(200).json({ success: true, data: menProducts });
+
+    } catch (error) {
+        logger.error(error.message);
+        return res.status(500).json({success : false , message : error.message});
+    }
+}
+
+const getKidsProducts = async (req, res) => {
+    try {
+        const menProducts = await Product.find({customerCategory : 'Kids'});
+        if(!menProducts){
+            logger.info('Kids products not found');
+            return res.status(404).json({ success : false , message : 'Kids products not found'});
+        }
+
+        logger.info('Kids products fetched successfully');
+        return res.status(200).json({ success: true, data: menProducts });
+
+    } catch (error) {
+        logger.error(error.message);
+        return res.status(500).json({success : false , message : error.message});
+    }
+}
+
 const getProduct = async (req, res) => {
     try {
         const isProduct = await Product.findById(req.params.id);
@@ -173,5 +225,8 @@ module.exports = {
     getProduct,
     addProduct,
     deleteProduct,
-    updateProduct
+    updateProduct,
+    getMenProducts,
+    getWomenProducts,
+    getKidsProducts
  };

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 export const sortUsers = async (users) => {
     const approvedUsers = users.filter(user => user.isApprovedByAdmin);
     const pendingUsers = users.filter(user => !user.isApprovedByAdmin);

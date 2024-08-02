@@ -10,7 +10,7 @@ const generateToken = async (user) => {
         userId: user._id,
         email: user.email,
         fistName: user.firstName,
-        lastName: user,
+        lastName: user.lastName,
         dob : user.dob,
         username: user.username,
         isAdmin: user.isAdmin,

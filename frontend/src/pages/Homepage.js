@@ -10,7 +10,7 @@ function Homepage() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [price, setPrice] = useState(1000); // set initial price to maximum value
+  const [price, setPrice] = useState(1000);
   const [size, setSize] = useState([]);
   const [fit, setFit] = useState([]);
   const [discount, setDiscount] = useState(0);
@@ -18,7 +18,12 @@ function Homepage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = 'http://localhost:3001/products';
+    const allProductsUrl = 'products';
+    // const menProductsUrl = 'men-products';
+    // const womenProductsUrl = 'women-products';
+    // const kidsProductsUrl = 'kids-products';
+    const baseUrl = 'http://localhost:3001/';
+    const url = `${baseUrl}${allProductsUrl}`;
 
     fetch(url, {
       method: 'GET',
@@ -36,45 +41,40 @@ function Homepage() {
       .then((data) => {
         if (Array.isArray(data.products)) {
           setProducts(data.products);
-          setFilteredProducts(data.products); // Initialize filteredProducts with fetched products
+          setFilteredProducts(data.products);
         } else {
           console.error('Fetched data is not an array:', data);
           setProducts([]);
           setFilteredProducts([]);
         }
-        setLoading(false); // Set loading to false after data is fetched
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Fetch error:', error);
         setProducts([]);
         setFilteredProducts([]);
-        setLoading(false); // Set loading to false even if there is an error
+        setLoading(false);
       });
   }, []);
 
   const applyFilters = () => {
     let filtered = products;
 
-    // Filter by price
     filtered = filtered.filter((product) => product.price <= price);
 
-    // Filter by size
     if (size.length > 0) {
       filtered = filtered.filter((product) => size.includes(product.size));
     }
 
-    // Filter by fit
     if (fit.length > 0) {
       filtered = filtered.filter((product) => fit.includes(product.fit));
     }
 
-    // Filter by discount
     filtered = filtered.filter((product) => product.discountRate >= discount);
 
     setFilteredProducts(filtered);
   };
 
-  //find the max and min price of the products
   const findMinMaxPrice = () => {
     let min = 0;
     let max = 0;
@@ -89,38 +89,32 @@ function Homepage() {
     return { min, max };
   }
 
-  //show only men products only
   const showMenProducts = () => {
-    setFilteredProducts(products.filter(product => product.customerCategory === 'Men' ));
+    setFilteredProducts(products.filter(product => product.customerCategory === 'Men'));
   }
 
   const showWomenProducts = () => {
-    setFilteredProducts(products.filter(product => product.customerCategory === 'Women' ));
+    setFilteredProducts(products.filter(product => product.customerCategory === 'Women'));
   }
+
   const showKidsProducts = () => {
-    setFilteredProducts(products.filter(product => product.customerCategory === 'Kids' ));
+    setFilteredProducts(products.filter(product => product.customerCategory === 'Kids'));
   }
 
-//show all products
-const showAllProducts = () => {
-  setFilteredProducts(products);
-}
-
-//handle navigation to product details page
-const handleProductDetails = (productName) => {
-  navigate(`/homepage/${productName}`);
-}
+  const showAllProducts = () => {
+    setFilteredProducts(products);
+  }
 
   return (
-    <div  className='homepage-container'>
+    <div className='homepage-container'>
       <Navbar 
-      onMenProducts = {showMenProducts}
-      onWomenProducts = {showWomenProducts}
-      onKidsProducts = {showKidsProducts}
-      onShowAllProducts = {showAllProducts}
+        onMenProducts={showMenProducts}
+        onWomenProducts={showWomenProducts}
+        onKidsProducts={showKidsProducts}
+        onShowAllProducts={showAllProducts}
       />
       <div className='fitlers-div'>
-          <ProductFilters
+        <ProductFilters
           price={price}
           setPrice={setPrice}
           size={size}
@@ -135,13 +129,15 @@ const handleProductDetails = (productName) => {
       </div>
       
       <div className='products-div'>
-
         {loading && <CircularProgress />} 
         {!loading && filteredProducts.length === 0 && <NoProductsFound />} 
         {!loading && filteredProducts.length > 0 && filteredProducts.map((product) => (
-          <div key={product.id} onClick={()=> handleProductDetails(product.name)} ><ProductCard key={product.id} product={product} /></div>
+          <div 
+            key={product.id} 
+            onClick={() => navigate(`/homepage/${product.name}`, { state: { product } })}>
+            <ProductCard key={product.id} product={product} />
+          </div>
         ))}
-
       </div>
     </div>
   );

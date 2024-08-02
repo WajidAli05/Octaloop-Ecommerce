@@ -43,9 +43,6 @@ function ProductCard({product}) {
                     <span>Fit</span>
                 </Typography>
             </div>
-            {/* <Typography variant="body2" color="text.secondary" className='info-item'>
-                <p>{product.description}</p>
-            </Typography> */}
         </CardContent>
         </CardActionArea>
      </Card>
