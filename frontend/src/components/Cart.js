@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState , useEffect } from 'react'
 import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,6 +12,51 @@ import { styled } from '@mui/material/styles';
 
 
 function Cart() {
+    const [cartItems, setCartItems] = useState([]);
+    const [products, setProducts] = useState([]);
+
+    const fetchCatItems = async () => {
+        fetch('http://localhost:3001/cart' , {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Allow-Control-Allow-Origin': '*',
+                //send token as well
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+        })
+        .then(res => res.json())
+        .then((data)=>{
+            setCartItems([...cartItems , data]);
+        })
+    }
+
+    //fetch products
+    const fetchProducts = async (product) => {
+        fetch(`http://localhost:3001/products/${product}` , {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Allow-Control-Allow-Origin': '*'  ,
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,       
+            }
+        })
+        .then(res => res.json())
+        .then((data)=>{
+            console.log("Data: " , data);
+            setProducts([...products , data]);
+        })
+    }
+
+    useEffect(()=>{
+        fetchCatItems().then(()=>{
+            cartItems.map((item)=>{
+                console.log("Item: " , item);
+                fetchProducts(item.product_id);
+            })
+        });
+    } , [])
+    
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
           backgroundColor: theme.palette.common.black,
@@ -33,6 +78,10 @@ function Cart() {
       }));
   return (
     <div>
+        {console.log("Cart items: " , cartItems)
+        }
+        {        console.log("Products: " , products)
+        }
         <div className='cart-heading-div'>
             <Typography variant="h4" component="h1" color="text.primary">
                 Cart
@@ -50,9 +99,7 @@ function Cart() {
                         <StyledTableCell align="right">TOTAL</StyledTableCell>
                         </TableRow>
                     </TableHead>
-                    <TableBody>
-                        
-                    </TableBody>
+                    
                 </Table>
             </TableContainer>
 
