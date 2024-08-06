@@ -62,7 +62,14 @@ function ExpendedProduct() {
         </Typography>
         <Typography variant="body2" color="text.primary" className='expanded-info-item'>
           <p>PKR :</p>
+          {product.discountRate > 0 ? 
+          <div>
+            <span className='original-price'>{product.price}</span>
+            <span className='discounted-price' >{(product.price * ((100 - product.discountRate)/100)).toFixed(2)}</span>
+          </div>
+          : 
           <span>{product.price}</span>
+          }
         </Typography>
         <div className='cart-quantity-div'>
           <Stack direction="row" spacing={2} className='expanded-info-item outline'>

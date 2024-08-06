@@ -758,7 +758,7 @@ input[type='range']::-moz-range-thumb {
   color: black;
 }
 
-.expanded-info-item > span{
+.expanded-info-item > span , .expanded-info-item > div > span{
   font-size: 20px;
 }
 
@@ -825,6 +825,30 @@ input[type='range']::-moz-range-thumb {
   }
 }
 
+.original-price{
+  color: red;
+  margin: 0px 10px;
+  text-decoration: line-through;
+}
+
+.discounted-price{
+  color: #45a049;
+}
+
+.name-img-div{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.name-img-div > img{
+  width: 80px;
+  height: 80px;
+ object-fit: contain;
+ border-radius: 10px;
+}
+
 
 /* Cart.js css starts here */
 .cart-heading-div{
@@ -835,4 +859,11 @@ input[type='range']::-moz-range-thumb {
   justify-content: center;
   align-items: center;
   background-color: rgb(234, 234, 255);
+}
+
+.quantity-div{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 10px;
 }

@@ -10,7 +10,6 @@ import UsersContextProvider from './contexts/provider/UsersContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <UsersContextProvider>
         <OtpContextProvider>
@@ -18,7 +17,6 @@ root.render(
         </OtpContextProvider>
       </UsersContextProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

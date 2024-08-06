@@ -67,6 +67,7 @@ const deleteFromCart = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Product not found in cart' });
         }
 
+
         logger.info('Product deleted from cart successfully');
         return res.status(200).json({ success: true, message: 'Product deleted from cart successfully' });
     } catch (error) {
@@ -75,8 +76,42 @@ const deleteFromCart = async (req, res) => {
     }
 }
 
+
+const increaseQuantity = async (req , res)=>{
+    try {
+        const { productId , quantity } = req.body;
+        const userId = req.user.userId;
+
+        //find product in cart and update if found
+        const cartItem = await Cart.findOneAndUpdate({userId , productId} , {quantity : quantity+1} , {new : true});
+        logger.info(`${cartItem.name} quantity increased successfully`)
+        return res.status(200).json({ success : true , message : 'Quantity increased successfully' , data : cartItem})
+    } catch (error) {
+        logger.error(error.message);
+        return res.status(500).json({ status : false , message : 'Error While increasing quantity'})
+    }
+}
+
+
+const decreaseQuantity = async (req , res)=>{
+    try {
+        const { productId , quantity } = req.body;
+        const userId = req.user.userId;
+
+        //find product in cart and update if found
+        const cartItem = await Cart.findOneAndUpdate({userId , productId} , {quantity : quantity-1} , {new : true});
+        logger.info(`${cartItem.name} quantity decreased successfully`)
+        return res.status(200).json({ success : true , message : 'Quantity decreased successfully' , data : cartItem})
+    } catch (error) {
+        logger.error(error.message);
+        return res.status(500).json({ status : false , message : 'Error While increasing quantity'})
+    }
+}
+
 module.exports = { 
     getCartProducts,
     addProductToCart,
-    deleteFromCart
+    deleteFromCart,
+    increaseQuantity,
+    decreaseQuantity
 };

@@ -4,7 +4,9 @@ const validateToken = require("../middlesware/tokenHandlerMiddleware.js");
 const {
     getCartProducts,
     addProductToCart,
-    deleteFromCart
+    deleteFromCart,
+    increaseQuantity,
+    decreaseQuantity
 }  = require('../controllers/cartController');
 
 router.use(validateToken);
@@ -17,5 +19,8 @@ router.post('/cart', addProductToCart);
 
 //delete product from cart
 router.delete('/cart', deleteFromCart);
+
+router.put('/cart/increase' , increaseQuantity);
+router.put('/cart/decrease' , decreaseQuantity);
 
 module.exports = router;
