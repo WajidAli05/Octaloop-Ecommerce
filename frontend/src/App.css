@@ -856,7 +856,7 @@ input[type='range']::-moz-range-thumb {
   height: 50px;
   padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: rgb(234, 234, 255);
 }
@@ -866,4 +866,286 @@ input[type='range']::-moz-range-thumb {
   justify-content: right;
   align-items: center;
   gap: 10px;
+}
+
+.cart-table{
+  margin-bottom: 100px;
+}
+
+.shipping-total-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.shipping-div{
+  width: 50%;
+  border: 1px solid #333;
+  margin: 0px 20px;
+  border-radius: 10px;
+}
+
+.total-div{
+  width: 30%;
+  height: max-content;
+  border: 1px solid #333;
+  margin: 0px 20px;
+  border-radius: 10px;
+}
+
+.shipping-div > div , .total-div > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shipping-inputs-div{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Container styling */
+.shipping-div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9; /* Light background for the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 600px;
+  margin: 0 auto; /* Centering the container */
+  animation: fadeIn 1s ease-in-out; /* Animation on load */
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-text {
+  margin: 0;
+}
+
+.shipping-icon {
+  animation: bounce 1s infinite; /* Animated icon */
+}
+
+/* Dropdown styling */
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-select {
+  appearance: none;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 84%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.3);
+}
+
+/* Input field styling */
+.input-field {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 80%;
+  height: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.3);
+}
+
+/* Label styling */
+.label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Input container styling */
+.zip-container, .street-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Button styling */
+.update-button {
+  width: 200px;
+  height: 50px;
+  align-self: flex-end; /* Align button to the right */
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 30px; /* Increase button size */
+  border-radius: 8px;
+  font-size: 1.2rem; /* Increase font size */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.update-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.update-button:active {
+  background-color: #004080;
+  animation: buttonClick 0.2s ease; /* Add click animation */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-15px);
+  }
+  60% {
+      transform: translateY(-7px);
+  }
+}
+
+@keyframes buttonClick {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(0.95);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+
+/* ------------------- */
+/* Container styling */
+.total-div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9; /* Light background for the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 600px;
+  margin: 0 auto; /* Centering the container */
+  animation: fadeIn 1s ease-in-out; /* Animation on load */
+}
+
+/* Header styling */
+.total-div > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.total-div .header-text {
+  margin: 0;
+}
+
+.total-div .total-icon {
+  animation: bounce 1s infinite; /* Animated icon */
+}
+
+/* Total summary styling */
+.total-summary-div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.total-summary-div > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+/* Button styling */
+.purchase-button {
+  align-self: center; /* Align button to the center */
+  width: 200px;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 30px; /* Increase button size */
+  border-radius: 8px;
+  font-size: 1.2rem; /* Increase font size */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.purchase-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.purchase-button:active {
+  background-color: #004080;
+  animation: buttonClick 0.2s ease; /* Add click animation */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-15px);
+  }
+  60% {
+      transform: translateY(-7px);
+  }
+}
+
+@keyframes buttonClick {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(0.95);
+  }
+  100% {
+      transform: scale(1);
+  }
 }

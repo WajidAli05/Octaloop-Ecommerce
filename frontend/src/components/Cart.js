@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,12 +12,38 @@ import Button from '@mui/material/Button';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+
+//react-toastify imports
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Cart() {
     const [cartItems, setCartItems] = useState([]);
     const [productDetails, setProductDetails] = useState({});
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [city , setCity] = useState('');
+    const [zip, setZip] = useState('');
+    const [street , setStreet] = useState('');
+
+    const toastId = useRef(null);
+
+    const cities = [
+        'Karachi',
+        'Lahore',
+        'Islamabad',
+        'Rawalpindi',
+        'Faisalabad',
+        'Multan',
+        'Peshawar',
+        'Quetta',
+        'Sialkot',
+        'Hyderabad',
+    ];
+    
 
     // Fetch cart items
     const fetchCartItems = async () => {
@@ -177,14 +203,27 @@ function Cart() {
             });
     };
 
+    //handle shipping toast
+    const handleShippingToast = () =>{
+        if(! toast.isActive(toastId.current)){
+            toastId.current = toast.success('Shipping address added successfully!' , { 
+                autoClose: 4000,
+                pauseOnFocusLoss: false
+             })
+        }
+    }
+
     return (
-        <div>
-            <div className='cart-heading-div'>
-                <Typography variant="h4" component="h1" color="text.primary">
-                    Cart
-                </Typography>
-            </div>
+        <div className='cart-div' >
             <div className='cart-table'>
+                <div className='cart-heading-div'>
+                    <Typography variant="h4" component="h1" color="text.primary">
+                        Cart
+                    </Typography>
+                    <Typography variant="h6" component="h1" color="text.secondary">  
+                        <ShoppingBasketIcon /> {cartItems.length} items in the cart
+                    </Typography>
+                </div>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 700 }} aria-label="customized table">
                         <TableHead>
@@ -258,8 +297,91 @@ function Cart() {
                     </Table>
                 </TableContainer>
             </div>
-            <div>
-                Total price and summary card comes here
+            <div className='shipping-total-div'>
+                <div className='shipping-div'>
+                    <ToastContainer />
+                    <div className='header'>
+                        <Typography variant="h5" component="h1" color="text.primary" className="header-text">
+                            Calculated Shipping
+                        </Typography>
+                        <LocalShippingIcon fontSize='large' color='primary' className="shipping-icon" />
+                    </div>
+                    <div className="dropdown-container">
+                        <label htmlFor='cities'>
+                            <Typography variant="subtitle1" component="h1" color="text.primary">
+                                Select your city
+                            </Typography>
+                        </label>
+                        <select name='cities' className="custom-select" onChange={(e)=> setCity(e.target.value)}>
+                            {cities.map((c) => (
+                                <option key={c} value={c}>{c}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className='zip-container'>
+                        <label htmlFor='zip'>
+                            <Typography variant="subtitle1" component="h1" color="text.primary">
+                                Zip Code
+                            </Typography>
+                        </label>
+                        <input type='text' name='zip' placeholder='Zip Code' onChange={(e)=> setZip(e.target.value)} className="input-field" />
+                    </div>
+                    <div className='street-container'>
+                        <label htmlFor='street'>
+                            <Typography variant="subtitle1" component="h1" color="text.primary">
+                                Street Address
+                            </Typography>
+                        </label>
+                        <input type='text' name='street' placeholder='Street Address' onChange={(e)=> setStreet(e.target.value)} className="input-field" />
+                    </div>
+                    <Button 
+                        variant="contained" 
+                        className="update-button"
+                        onClick={ handleShippingToast }>
+                            Update
+                    </Button>
+                </div>
+
+                <div className='total-div'>
+                    <div>
+                        <Typography variant="h5" component="h1" color="text.primary">  
+                            Cart Total
+                        </Typography>
+                        <ReceiptLongIcon fontSize='large' color='primary' className="total-icon" />
+                    </div>
+                    <div className='total-summary-div'>
+                        <div>
+                            <Typography variant="subtitle2" component="h1" color="text.primary">  
+                                Cart subtotal 
+                            </Typography>
+                            <Typography variant="subtitle2" component="h1" color="text.primary">  
+                                PKR 99.00
+                            </Typography>
+                        </div>
+                        <div>
+                            <Typography variant="subtitle2" component="h1" color="text.primary">  
+                                Discount  
+                            </Typography>
+                            <Typography variant="subtitle2" component="h1" color="text.primary">  
+                                PKR -00.00
+                            </Typography>
+                        </div>
+                        <div>
+                            <Typography variant="h6" component="h1" color="text.primary">  
+                                Cart Total  
+                            </Typography>
+                            <Typography variant="h6" component="h1" color="text.primary">  
+                                PKR 110.00
+                            </Typography>
+                        </div>
+                        <Button 
+                            variant="contained" 
+                            className="purchase-button">
+                            Complete Purchase
+                        </Button>
+                    </div>
+                </div>
+
             </div>
         </div>
     );
