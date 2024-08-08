@@ -95,7 +95,7 @@ function Cart() {
     }, []);
 
     useEffect(() => {
-        if (cartItems.length > 0) {
+        if (cartItems?.length > 0) {
             fetchProductDetails();
         }
     }, [cartItems]);
@@ -207,8 +207,18 @@ function Cart() {
 
     //handle shipping toast
     const handleShippingToast = () =>{
-        if(! toast.isActive(toastId.current)){
+
+        if(city && zip && street && !toast.isActive(toastId.current)){
             toastId.current = toast.success('Shipping address added successfully!' , { 
+                autoClose: 4000,
+                pauseOnFocusLoss: false
+             })
+             return;
+        }
+
+        //this should also display only once for 4 seconds even if user clicks multiple times
+        if(!toast.isActive(toastId.current)){
+            toastId.current = toast.error('Please fill all the fields!' , { 
                 autoClose: 4000,
                 pauseOnFocusLoss: false
              })
@@ -225,7 +235,7 @@ function Cart() {
                         Cart
                     </Typography>
                     <Typography variant="h6" component="h1" color="text.secondary">  
-                        <ShoppingBasketIcon /> {cartItems.length} items in the cart
+                        <ShoppingBasketIcon /> {cartItems ? cartItems?.length : 'No'} items in the cart
                     </Typography>
                 </div>
                 <TableContainer component={Paper}>
@@ -240,7 +250,7 @@ function Cart() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {cartItems.map((item) => {
+                            {cartItems?.map((item) => {
                                 const product = productDetails[item.productId];                                
                                 return (
                                     <StyledTableRow key={item.productId}>

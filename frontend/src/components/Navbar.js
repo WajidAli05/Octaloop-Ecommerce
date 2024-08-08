@@ -7,6 +7,7 @@ import { Tooltip } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Badge from '@mui/material/Badge';
 
 
@@ -39,6 +40,12 @@ function Navbar() {
         })
     } , []);
 
+    //logout function
+    const logout = () =>{
+        localStorage.removeItem('token');
+        navigate('/login');
+    };
+
   return (
     <nav className='navbar'>
         <div className='categories-links-div'>
@@ -65,8 +72,7 @@ function Navbar() {
                 }
                 <li onClick={()=> navigate('/cart')} >
                     <Tooltip title='Cart' placement='top' arrow>
-                        {/* {Display the badge on the cart only when the cart has items otherwise not} */}
-                        {localStorage.getItem('token') && cart.length > 0 ? 
+                        {cart.length > 0 ? 
                         <Badge badgeContent={cart.length} color='error'>
                             <LocalMallIcon />
                         </Badge>
@@ -75,11 +81,19 @@ function Navbar() {
                         }
                     </Tooltip>
                 </li>
-                <li onClick={()=>navigate('/login')} >
-                    <Tooltip title='login' placement='top' arrow>
-                        <LoginIcon />
-                    </Tooltip>
-                </li>
+                {localStorage.getItem('token') ? 
+                    <li onClick={logout} >
+                        <Tooltip title='logout' placement='top' arrow>
+                            <LogoutIcon />
+                        </Tooltip>
+                    </li>
+                    :
+                    <li onClick={()=>navigate('/login')} >
+                        <Tooltip title='login' placement='top' arrow>
+                            <LoginIcon />
+                        </Tooltip>
+                    </li>
+                }
             </ul>
         </div>
     </nav>

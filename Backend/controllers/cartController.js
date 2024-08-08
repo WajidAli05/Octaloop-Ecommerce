@@ -76,6 +76,23 @@ const deleteFromCart = async (req, res) => {
     }
 }
 
+//clear entire cart
+const clearCart = async (req , res)=>{
+    try{
+        const cart = await Cart.deleteMany({});
+        if(!cart){
+            logger.info('Clearing cart unsuccessful');
+            return res.status(500).json({success : false , message : 'Clearing cart unsuccessful.'})
+        }
+
+        logger.info('Cart cleared successfully.');
+        return res.status(200).json({success : true , message : 'Cart cleared successfully.'});
+    }
+    catch(error){
+        logger.error(error.message);
+        return res.status(500).json({success : false , message : 'Error while clearing the cart'})
+    }
+}
 
 const increaseQuantity = async (req , res)=>{
     try {
@@ -113,5 +130,6 @@ module.exports = {
     addProductToCart,
     deleteFromCart,
     increaseQuantity,
-    decreaseQuantity
+    decreaseQuantity,
+    clearCart
 };

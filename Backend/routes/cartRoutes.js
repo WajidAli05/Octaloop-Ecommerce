@@ -6,7 +6,8 @@ const {
     addProductToCart,
     deleteFromCart,
     increaseQuantity,
-    decreaseQuantity
+    decreaseQuantity,
+    clearCart
 }  = require('../controllers/cartController');
 
 router.use(validateToken);
@@ -22,5 +23,6 @@ router.delete('/cart', deleteFromCart);
 
 router.put('/cart/increase' , increaseQuantity);
 router.put('/cart/decrease' , decreaseQuantity);
+router.delete('/clear-cart' , clearCart);
 
 module.exports = router;
