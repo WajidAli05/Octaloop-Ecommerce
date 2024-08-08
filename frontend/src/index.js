@@ -6,6 +6,7 @@ import { BrowserRouter} from "react-router-dom";
 //import OTP context provider
 import OtpContextProvider from './contexts/provider/OtpContextProvider';
 import UsersContextProvider from './contexts/provider/UsersContextProvider';
+import { CartProvider } from './contexts/CartContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +14,9 @@ root.render(
     <BrowserRouter>
       <UsersContextProvider>
         <OtpContextProvider>
-          <App />
+          <CartProvider >
+            <App />
+          </CartProvider>
         </OtpContextProvider>
       </UsersContextProvider>
     </BrowserRouter>

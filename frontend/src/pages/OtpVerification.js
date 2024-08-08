@@ -18,7 +18,6 @@ function OtpVerification() {
     //show error if user enters letters or special characters
     if (isNaN(value)) {
       setOtpError('The OTP is invalid. Please enter a valid OTP.');
-      console.log('The OTP is invalid. Please enter a valid OTP.');
       setTimeout(() => {
         setOtpError('');
       }, 3000);

@@ -790,6 +790,10 @@ input[type='range']::-moz-range-thumb {
   flex-basis: 0;
 }
 
+.cart-div{
+  margin-top: 100px;
+}
+
 .cart-quantity-div{
   display: flex;
   justify-content: start;

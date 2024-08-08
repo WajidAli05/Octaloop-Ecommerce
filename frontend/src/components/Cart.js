@@ -16,6 +16,8 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 
+import Navbar from './Navbar';
+
 //react-toastify imports
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -214,6 +216,8 @@ function Cart() {
     }
 
     return (
+        <>
+        <Navbar />
         <div className='cart-div' >
             <div className='cart-table'>
                 <div className='cart-heading-div'>
@@ -283,10 +287,10 @@ function Cart() {
                                                 {product && product.discountRate > 0 ? 
                                                     <div>
                                                         <span className='original-price'>PKR{(product.price * item.quantity).toFixed(2)}</span>
-                                                        <span className='discounted-price'>PKR.{(product.price * item.quantity * ((100 - product.discountRate)/100)).toFixed(2)}</span>
+                                                        <span className='discounted-price'>PKR{(product.price * item.quantity * ((100 - product.discountRate)/100)).toFixed(2)}</span>
                                                     </div>
                                                     : 
-                                                    <span>{product ? product.price : 'Loading...'}</span>
+                                                    <span>{product ? `PKR${product.price}` : 'Loading...'}</span>
                                                 }
                                             </Typography>
                                         </StyledTableCell>
@@ -384,6 +388,7 @@ function Cart() {
 
             </div>
         </div>
+        </>
     );
 }
 

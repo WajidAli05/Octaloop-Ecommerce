@@ -9,6 +9,7 @@ import ResetPassword from './pages/ResetPassword';
 import UsersTable from './pages/TableView';
 import AdminHome from './pages/AdminHome';
 import ExpendedProduct from './components/ExpendedProduct';
+import Cart from './components/Cart';
 
 import { Routes, Route } from "react-router-dom";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/approveUser" element={<ApproveUser />} />
         <Route path='/usersTableView' element = {<UsersTable />} />
         <Route path='/AdminHome' element = {<AdminHome />} />
+        <Route path='/cart' element = {<Cart />} />
       </Routes>
     </div>
   );

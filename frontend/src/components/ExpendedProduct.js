@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useRef , useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
@@ -14,21 +14,76 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import Cart from './Cart';
 import Navbar from './Navbar';
 
+import { CartContext } from '../contexts/CartContext';
+
+//react-toastify imports
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function ExpendedProduct() {
+  const { cart, setCart } = useContext(CartContext);
+
+  const [error, setError] = useState('');
   const { state } = useLocation();
   const { product } = state || { product: {} };
   const [quantity, setQuantity] = useState(1);
+
+  const toastId = useRef(null);
+
+     //handle shipping toast
+     const handleCartToast = () =>{
+      if(! toast.isActive(toastId.current)){
+          toastId.current = toast.success('Product added to cart!' , { 
+              autoClose: 4000,
+              pauseOnFocusLoss: false
+           })
+      }
+  }
+
 
   if (!product) {
     return <div>No product found</div>;
   }
 
+  const handleAddToCart = () => {
+    const url = 'http://localhost:3001/cart';
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify({ productId : product._id, quantity }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if(!data.success){
+          setError(data.error);
+          return;
+        }
+
+        //first check if the product is already in the cart then increase the quantity of that product otherwise add the product to the cart
+        //this is done to avoid duplicate products in the cart
+
+        const existingProduct = cart.find((item) => item._id === data.data._id);
+        if (existingProduct) {
+          const updatedCart = cart.map((item) =>
+            item._id === data.data._id ? { ...item, quantity: item.quantity + data.data.quantity } : item
+          );
+          setCart(updatedCart);
+          handleCartToast();
+          return;
+        }
+      })
+      .catch((error) => {
+        setError('Error:', error.message);
+      });
+  }
+
   return (
     <div className='expanded-div'>
-      {/* <Cart /> */}
       <Navbar />
       <div>
         <CardMedia
@@ -85,7 +140,9 @@ function ExpendedProduct() {
             </Button>
           </Stack>
           <Stack direction="row" spacing={2}>
-            <Button variant="contained" size='large' endIcon={<AddShoppingCartIcon />}>
+            <Button variant="contained" size='large' endIcon={<AddShoppingCartIcon />}
+                    {...(product.quantity <= 0 ? {disabled: true} : {})}
+                    onClick={()=> handleAddToCart()}  >
               Add to Cart
             </Button>
           </Stack>
