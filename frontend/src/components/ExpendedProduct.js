@@ -15,6 +15,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 import Cart from './Cart';
+import Navbar from './Navbar';
 
 function ExpendedProduct() {
   const { state } = useLocation();
@@ -27,9 +28,9 @@ function ExpendedProduct() {
 
   return (
     <div className='expanded-div'>
-      <Cart />
-
-      {/* <div>
+      {/* <Cart /> */}
+      <Navbar />
+      <div>
         <CardMedia
           component="img"
           height="800"
@@ -129,7 +130,7 @@ function ExpendedProduct() {
           Description
       </Typography>
         <span>{product.description}</span>
-      </div> */}
+      </div>
     </div>
   )
 }

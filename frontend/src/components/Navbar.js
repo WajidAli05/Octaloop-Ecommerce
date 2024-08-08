@@ -8,7 +8,7 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import LoginIcon from '@mui/icons-material/Login';
 
 
-function Navbar({onMenProducts , onWomenProducts , onKidsProducts , onShowAllProducts }) {
+function Navbar() {
     const navigate = useNavigate();
     const [searchClicked , setSearchClicked] = useState(false);
 
@@ -16,10 +16,9 @@ function Navbar({onMenProducts , onWomenProducts , onKidsProducts , onShowAllPro
     <nav className='navbar'>
         <div className='categories-links-div'>
             <ul className='categories-links'>
-                <li onClick={()=>onShowAllProducts()} >All</li>
-                <li onClick={()=>onWomenProducts()} >Women</li>
-                <li onClick={()=>onMenProducts()} >Men</li>
-                <li onClick={()=>onKidsProducts()} >Kids</li>
+                <li onClick={()=>navigate('/homepage')} >Home</li>
+                <li>Contact Us</li>
+                <li>About</li>
             </ul>
         </div>
         <div>

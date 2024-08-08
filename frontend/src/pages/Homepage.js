@@ -5,6 +5,7 @@ import ProductCard from '../components/ProductCard';
 import ProductFilters from '../components/ProductFilters';
 import CircularProgress from '@mui/material/CircularProgress';
 import NoProductsFound from '../components/NoProductsFound';
+import GenderFilter from '../components/GenderFilter';
 
 function Homepage() {
   const [products, setProducts] = useState([]);
@@ -106,40 +107,45 @@ function Homepage() {
   }
 
   return (
-    <div className='homepage-container'>
-      <Navbar 
-        onMenProducts={showMenProducts}
-        onWomenProducts={showWomenProducts}
-        onKidsProducts={showKidsProducts}
-        onShowAllProducts={showAllProducts}
-      />
-      <div className='fitlers-div'>
-        <ProductFilters
-          price={price}
-          setPrice={setPrice}
-          size={size}
-          setSize={setSize}
-          fit={fit}
-          setFit={setFit}
-          discount={discount}
-          setDiscount={setDiscount}
-          onApplyFilters={applyFilters}
-          minMaxPrice={findMinMaxPrice}
+    <>
+        <Navbar />
+      <div className='homepage-main-div' >
+        <GenderFilter 
+              onMenProducts={showMenProducts}
+              onWomenProducts={showWomenProducts}
+              onKidsProducts={showKidsProducts}
+              onShowAllProducts={showAllProducts}
         />
-      </div>
-      
-      <div className='products-div'>
-        {loading && <CircularProgress />} 
-        {!loading && filteredProducts.length === 0 && <NoProductsFound />} 
-        {!loading && filteredProducts.length > 0 && filteredProducts.map((product) => (
-          <div 
-            key={product.id} 
-            onClick={() => navigate(`/homepage/${product.name}`, { state: { product } })}>
-            <ProductCard key={product.id} product={product} />
+        <div className='homepage-container'>
+          <div className='fitlers-div'>
+            <ProductFilters
+              price={price}
+              setPrice={setPrice}
+              size={size}
+              setSize={setSize}
+              fit={fit}
+              setFit={setFit}
+              discount={discount}
+              setDiscount={setDiscount}
+              onApplyFilters={applyFilters}
+              minMaxPrice={findMinMaxPrice}
+            />
           </div>
-        ))}
+        
+          <div className='products-div'>
+            {loading && <CircularProgress />} 
+            {!loading && filteredProducts.length === 0 && <NoProductsFound />} 
+            {!loading && filteredProducts.length > 0 && filteredProducts.map((product) => (
+              <div 
+                key={product.id} 
+                onClick={() => navigate(`/homepage/${product.name}`, { state: { product } })}>
+                <ProductCard key={product.id} product={product} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
