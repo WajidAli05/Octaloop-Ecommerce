@@ -14,7 +14,14 @@ const cartSchema = new mongoose.Schema({
     quantity : {
         type : Number,
         required : true
-    }
+    }, 
+    addedAt : {
+        type : Date,
+        required : true
+    },
+}, 
+{
+    timestamps : true,
 });
 
 const Cart = mongoose.model('Cart' , cartSchema);

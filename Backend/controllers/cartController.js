@@ -1,5 +1,6 @@
 const logger = require('../config/logger/logger')
 const Cart = require('../models/cartModel');
+const Product = require('../models/productModel');
 
 //get all the cart products
 const getCartProducts = async (req, res) => {
@@ -31,11 +32,20 @@ const addProductToCart = async (req, res) => {
         //if no then add the product to the cart
         const product = await Cart.findOne({ userId, productId });
         let response = null;
+        
         if (product) {
-            response = await Cart.findOneAndUpdate({ userId, productId }, { quantity: product.quantity + quantity }, { new: true });
+            response = await Cart.findOneAndUpdate({ userId, productId }, 
+                { quantity: product.quantity + quantity,
+                    addedAt : Date.now()
+                 },
+                 { new: true });
+            await response.save();
+
         }
         else {
-            const cart = new Cart({ userId, productId, quantity });
+            const cart = new Cart({ userId, productId, quantity, 
+                                    addedAt : Date.now() 
+                                });
             response = await cart.save();
         }
         
@@ -44,8 +54,11 @@ const addProductToCart = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Error in adding product to cart' });
         }
 
+        //decrease the quantity of product in product collection by "quantity"
+        await Product.findOneAndUpdate({productId} , { $inc : {quantity : -quantity}});
+
         logger.info('Product added to cart successfully');
-        return res.status(200).json({ success: true, message: 'Product added to cart successfully' });
+        return res.status(200).json({ success: true, message: 'Product added to cart successfully', data : response });
 
     } catch (error) {
         logger.error(error.message);
@@ -100,7 +113,16 @@ const increaseQuantity = async (req , res)=>{
         const userId = req.user.userId;
 
         //find product in cart and update if found
-        const cartItem = await Cart.findOneAndUpdate({userId , productId} , {quantity : quantity+1} , {new : true});
+        const cartItem = await Cart.findOneAndUpdate({userId , productId} , 
+            {
+                quantity : quantity+1,
+            } , 
+            {new : true});
+        
+        await cartItem.save();
+
+        await Product.findOneAndUpdate({productId} , { $inc : {quantity : -1}});
+        
         logger.info(`${cartItem.name} quantity increased successfully`)
         return res.status(200).json({ success : true , message : 'Quantity increased successfully' , data : cartItem})
     } catch (error) {
@@ -115,8 +137,14 @@ const decreaseQuantity = async (req , res)=>{
         const { productId , quantity } = req.body;
         const userId = req.user.userId;
 
+
         //find product in cart and update if found
         const cartItem = await Cart.findOneAndUpdate({userId , productId} , {quantity : quantity-1} , {new : true});
+        await cartItem.save();
+
+        //decrease the quantity of product in product collection by 1
+        await Product.findOneAndUpdate({productId} , { $inc : {quantity : 1}});
+        
         logger.info(`${cartItem.name} quantity decreased successfully`)
         return res.status(200).json({ success : true , message : 'Quantity decreased successfully' , data : cartItem})
     } catch (error) {

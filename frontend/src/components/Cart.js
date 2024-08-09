@@ -32,8 +32,11 @@ function Cart() {
     const [street , setStreet] = useState('');
     const phonePrefix = '+92-';
     const [phone , setPhone] = useState(phonePrefix);
+    const [total , setTotal] = useState(0);
+    const [coupon , setCoupon] = useState(0);
 
     const toastId = useRef(null);
+    const shippingRef = useRef(null);
 
     const cities = [
         'Karachi',
@@ -84,6 +87,7 @@ function Cart() {
             const results = await Promise.all(requests);
             const productData = results.reduce((acc, data) => {
                 acc[data.data._id] = data.data;
+                console.log(data.data);
                 return acc;
             }, {});
             setProductDetails(productData);
@@ -92,15 +96,45 @@ function Cart() {
         }
     };
 
+
+    //find total price of the cart
+    const findTotal = () => {
+        let totalAmount = 0;
+        
+        cartItems.forEach(item => {
+            const product = productDetails[item.productId];
+            if (product) {
+                const itemPrice = product.price * item.quantity;
+                const discountedPrice = product.discountRate > 0 
+                    ? itemPrice * ((100 - product.discountRate) / 100) 
+                    : itemPrice;
+                    
+                totalAmount += discountedPrice;
+            }
+        });
+    
+        setTotal(totalAmount.toFixed(2));
+    };
+    
+
+
     useEffect(() => {
         fetchCartItems();
     }, []);
 
     useEffect(() => {
         if (cartItems?.length > 0) {
-            fetchProductDetails();
+            fetchProductDetails();            
         }
     }, [cartItems]);
+
+    useEffect(() => {
+        findTotal();
+    }, [cartItems, productDetails]);
+    
+    
+    console.log('total---------' , total);
+    
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -210,13 +244,29 @@ function Cart() {
 
     //update the shipping address in the backend
     const addShippingAddress = async ()=>{
-        
+        const url = 'http://localhost:3001/shipping';
+        const completeAddress = `${street} ${city} ${zip}`;
+        await fetch(url , {
+            method: "POST",
+            headers:{
+                'Content-Type' : 'application/json',
+                'Authorization' : `Bearer ${localStorage.getItem('token')}`
+            },
+            body : JSON.stringify({address : completeAddress , phone})
+        })
+        .then((res)=> res.json())
+        .then((data)=>{
+            !data.success ? setError(data.message) :
+            setSuccess(data.message);
+        })
+        .catch((error)=> setError(error.message));
     }
 
     //handle shipping toast
     const handleShippingToast = () =>{
 
         if(city && zip && street && phone && !toast.isActive(toastId.current)){
+            shippingRef.current.style.borderColor = '#333';
             toastId.current = toast.success('Shipping address added successfully!' , { 
                 autoClose: 4000,
                 pauseOnFocusLoss: false
@@ -226,11 +276,22 @@ function Cart() {
 
         //this should also display only once for 4 seconds even if user clicks multiple times
         if(!toast.isActive(toastId.current)){
+            shippingRef.current.style.borderColor = 'red';
             toastId.current = toast.error('Please fill all the fields!' , { 
                 autoClose: 4000,
                 pauseOnFocusLoss: false
              })
         }
+    }
+
+    //complete purchase
+    const completePurchase = () => {
+        if(!city || !zip || !street || !phone){
+            shippingRef.current.style.borderColor = 'red';
+            shippingRef.current.style.backgroundColor = '#ffbcbc';
+            return;
+        }
+        
     }
 
     return (
@@ -259,7 +320,7 @@ function Cart() {
                         </TableHead>
                         <TableBody>
                             {cartItems?.map((item) => {
-                                const product = productDetails[item.productId];                                
+                                const product = productDetails[item.productId];                                 
                                 return (
                                     <StyledTableRow key={item.productId}>
                                         <StyledTableCell component="th" scope="row">
@@ -310,6 +371,8 @@ function Cart() {
                                                     : 
                                                     <span>{product ? `PKR${product.price}` : 'Loading...'}</span>
                                                 }
+                                                {console.log('total' , total)
+                                                }
                                             </Typography>
                                         </StyledTableCell>
                                     </StyledTableRow>
@@ -320,7 +383,11 @@ function Cart() {
                 </TableContainer>
             </div>
             <div className='shipping-total-div'>
-                <div className='shipping-div'>
+                <div className='shipping-div' ref={shippingRef} onFocus={()=> {
+                    //reset to default styles
+                    shippingRef.current.style.backgroundColor = ''
+                    shippingRef.current.style.borderColor = '#333'
+                    }} >
                     <ToastContainer />
                     <div className='header'>
                         <Typography variant="h5" component="h1" color="text.primary" className="header-text">
@@ -372,7 +439,11 @@ function Cart() {
                     <Button 
                         variant="contained" 
                         className="update-button"
-                        onClick={ handleShippingToast }>
+                        onClick={()=>{
+                            addShippingAddress();
+                            handleShippingToast();
+                        }}>
+                            
                             Update
                     </Button>
                 </div>
@@ -390,12 +461,12 @@ function Cart() {
                                 Cart subtotal 
                             </Typography>
                             <Typography variant="subtitle2" component="h1" color="text.primary">  
-                                PKR 99.00
+                                PKR {total}
                             </Typography>
                         </div>
                         <div>
                             <Typography variant="subtitle2" component="h1" color="text.primary">  
-                                Discount  
+                                Additional Discount  
                             </Typography>
                             <Typography variant="subtitle2" component="h1" color="text.primary">  
                                 PKR -00.00
@@ -406,13 +477,14 @@ function Cart() {
                                 Cart Total  
                             </Typography>
                             <Typography variant="h6" component="h1" color="text.primary">  
-                                PKR 110.00
+                                PKR {total}
                             </Typography>
                         </div>
                         <Button 
                             variant="contained" 
                             className="purchase-button"
-                            {...(!city || !zip || !street || !phone ? {disabled: true} : {})}>
+                            // {...(!city || !zip || !street || !phone ? {disabled: true} : {})}
+                            onClick={completePurchase}>
                             Complete Purchase
                         </Button>
                     </div>
