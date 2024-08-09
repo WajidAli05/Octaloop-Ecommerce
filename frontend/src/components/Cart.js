@@ -30,6 +30,8 @@ function Cart() {
     const [city , setCity] = useState('');
     const [zip, setZip] = useState('');
     const [street , setStreet] = useState('');
+    const phonePrefix = '+92-';
+    const [phone , setPhone] = useState(phonePrefix);
 
     const toastId = useRef(null);
 
@@ -205,10 +207,16 @@ function Cart() {
             });
     };
 
+
+    //update the shipping address in the backend
+    const addShippingAddress = async ()=>{
+        
+    }
+
     //handle shipping toast
     const handleShippingToast = () =>{
 
-        if(city && zip && street && !toast.isActive(toastId.current)){
+        if(city && zip && street && phone && !toast.isActive(toastId.current)){
             toastId.current = toast.success('Shipping address added successfully!' , { 
                 autoClose: 4000,
                 pauseOnFocusLoss: false
@@ -326,7 +334,7 @@ function Cart() {
                                 Select your city
                             </Typography>
                         </label>
-                        <select name='cities' className="custom-select" onChange={(e)=> setCity(e.target.value)}>
+                        <select name='cities' value={city} className="custom-select" onChange={(e)=> setCity(e.target.value)}>
                             {cities.map((c) => (
                                 <option key={c} value={c}>{c}</option>
                             ))}
@@ -338,7 +346,7 @@ function Cart() {
                                 Zip Code
                             </Typography>
                         </label>
-                        <input type='text' name='zip' placeholder='Zip Code' onChange={(e)=> setZip(e.target.value)} className="input-field" />
+                        <input type='text' value={zip} name='zip' placeholder='Zip Code' onChange={(e)=> setZip(e.target.value)} className="input-field" />
                     </div>
                     <div className='street-container'>
                         <label htmlFor='street'>
@@ -346,7 +354,20 @@ function Cart() {
                                 Street Address
                             </Typography>
                         </label>
-                        <input type='text' name='street' placeholder='Street Address' onChange={(e)=> setStreet(e.target.value)} className="input-field" />
+                        <input type='text' value={street} name='street' placeholder='Street Address' onChange={(e)=> setStreet(e.target.value)} className="input-field" />
+                    </div>
+                    <div className='phone-container'>
+                        <label htmlFor='phone'>
+                            <Typography variant="subtitle1" component="h1" color="text.primary">
+                                Phone Number
+                            </Typography>
+                        </label>
+                        <input type='tel' value={phone} name='phone' placeholder='Phone Number' onChange={(e)=>{
+                            const value = e.target.value;
+                            if(value.startsWith(phonePrefix)){
+                                setPhone(value);
+                            }
+                        }} className="input-field" />
                     </div>
                     <Button 
                         variant="contained" 
@@ -390,7 +411,8 @@ function Cart() {
                         </div>
                         <Button 
                             variant="contained" 
-                            className="purchase-button">
+                            className="purchase-button"
+                            {...(!city || !zip || !street || !phone ? {disabled: true} : {})}>
                             Complete Purchase
                         </Button>
                     </div>

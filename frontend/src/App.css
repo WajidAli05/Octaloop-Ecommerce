@@ -558,7 +558,7 @@ h2 , h1{
 }
 
 .homepage-container{
-  margin-top: 100px;
+  margin-top: 30px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -575,7 +575,7 @@ h2 , h1{
 
 .fitlers-div{
   position: relative;
-  top: -450px;
+  top: -600px;
   left: 15px;
   width: 13%;
   margin: auto 20px;
@@ -1001,7 +1001,7 @@ input[type='range']::-moz-range-thumb {
 }
 
 /* Input container styling */
-.zip-container, .street-container {
+.zip-container, .street-container , .phone-container {
   display: flex;
   flex-direction: column;
   gap: 5px;
