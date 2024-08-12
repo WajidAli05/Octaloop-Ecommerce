@@ -119,6 +119,7 @@ function Homepage() {
         <div className='homepage-container'>
           <div className='fitlers-div'>
             <ProductFilters
+            key={price}
               price={price}
               setPrice={setPrice}
               size={size}

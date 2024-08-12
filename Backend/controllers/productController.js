@@ -206,6 +206,53 @@ const deleteProduct = async (req, res) => {
 }
 
 
+//get recommended products
+const recommendedProducts = async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const product = await Product.findById(productId);
+
+        if (!product) {
+            logger.info('Product not found');
+            return res.status(404).json({ success: false, message: 'Product Not Found!' });
+        }
+
+        const minPrice = product.price - 50;
+        const maxPrice = product.price + 50;
+        const gender = product.customerCategory;
+        const minDiscount = product.discountRate - 5;
+        const maxDiscount = product.discountRate + 5;
+        const productType = product.type;
+
+        // Criteria for finding recommended products
+        const recommendedProducts = await Product.find({
+            _id: { $ne: productId }, // Exclude the current product
+            $or: [
+                { price: { $gte: minPrice, $lte: maxPrice } },
+                { customerCategory: gender },
+                { discountRate: { $gte: minDiscount, $lte: maxDiscount } },
+                { type: productType }
+            ]
+        }).limit(8);
+
+        if (recommendedProducts.length === 0) {
+            logger.info('No Recommendations found!');
+            return res.status(404).json({ success: false, message: 'No Recommendations found!' });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: 'Recommendations found successfully.',
+            data: recommendedProducts
+        });
+
+    } catch (error) {
+        logger.error('Error in fetching recommended products from the database');
+        return res.status(500).json({ success: false, message: 'Error fetching recommended products.' });
+    }
+};
+
+
 // ***********************Additional Functions for clean coding*****************************
 const checkEmptyFields = async (name , description , price , size , color , productImagePath , category , sku , discountRate , quantity , customerCategory , type , fit)=>{
     //if condition on all the fields
@@ -228,5 +275,6 @@ module.exports = {
     updateProduct,
     getMenProducts,
     getWomenProducts,
-    getKidsProducts
+    getKidsProducts,
+    recommendedProducts
  };

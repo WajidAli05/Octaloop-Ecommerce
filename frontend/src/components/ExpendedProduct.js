@@ -17,6 +17,7 @@ import Paper from '@mui/material/Paper';
 import Navbar from './Navbar';
 
 import { CartContext } from '../contexts/CartContext';
+import ProductRecommendation from './ProductRecommendation';
 
 //react-toastify imports
 import { ToastContainer, toast } from 'react-toastify';
@@ -31,6 +32,7 @@ function ExpendedProduct() {
   const [quantity, setQuantity] = useState(1);
 
   const toastId = useRef(null);
+
 
      //handle shipping toast
      const handleCartToast = () =>{
@@ -83,6 +85,7 @@ function ExpendedProduct() {
   }
 
   return (
+    <div className='expanded-product-main-container'>
     <div className='expanded-div'>
       <Navbar />
       <div>
@@ -188,6 +191,11 @@ function ExpendedProduct() {
       </Typography>
         <span>{product.description}</span>
       </div>
+    </div>
+    <div>
+      <ProductRecommendation productId={product._id} />
+    </div>
+    
     </div>
   )
 }

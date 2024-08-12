@@ -11,7 +11,8 @@ const {
     updateProduct,
     getMenProducts,
     getWomenProducts,
-    getKidsProducts
+    getKidsProducts,
+    recommendedProducts
 } = require('../controllers/productController');
 
 //get all the products
@@ -32,6 +33,9 @@ router.post('/products', upload.single('productImage') , addProduct);
 
 //get a single product
 router.route('/products/:id').get(getProduct).delete(deleteProduct).put(updateProduct);
+
+//recommended products
+router.get('/recommended-products/:productId' , recommendedProducts);
 
 
 module.exports = router;

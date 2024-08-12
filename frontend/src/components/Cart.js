@@ -133,7 +133,6 @@ function Cart() {
     }, [cartItems, productDetails]);
     
     
-    console.log('total---------' , total);
     
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({

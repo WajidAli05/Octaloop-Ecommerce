@@ -7,8 +7,7 @@ import { CardActionArea } from '@mui/material';
 import Badge from '@mui/material/Badge';
 
 
-function ProductCard({product}) {
-
+function ProductCard({product}) {    
   return (
     <>
       {product.discountRate > 0 ?
