@@ -294,7 +294,7 @@ function Cart() {
     }
 
     return (
-        <>
+        <div className='cart-main-container'>
         <Navbar />
         <div className='cart-div' >
             <div className='cart-table'>
@@ -491,7 +491,7 @@ function Cart() {
 
             </div>
         </div>
-        </>
+        </div>
     );
 }
 
