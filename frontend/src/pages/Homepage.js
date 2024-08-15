@@ -6,6 +6,7 @@ import ProductFilters from '../components/ProductFilters';
 import CircularProgress from '@mui/material/CircularProgress';
 import NoProductsFound from '../components/NoProductsFound';
 import GenderFilter from '../components/GenderFilter';
+import Footer from '../components/Footer';
 
 function Homepage() {
   const [products, setProducts] = useState([]);
@@ -146,6 +147,7 @@ function Homepage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

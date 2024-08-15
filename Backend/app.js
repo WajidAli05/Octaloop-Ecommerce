@@ -17,6 +17,7 @@ const otpRouter = require('./routes/otpRoutes.js');
 const productRouter = require('./routes/productRoutes.js');
 const cartRouter = require('./routes/cartRoutes.js');
 const shippingRouter = require('./routes/shippingRoutes.js');
+const contactUsRouter = require('./routes/contactUsRoutes.js');
 
 
 const morganFormat = ':method :url :status :response-time ms';
@@ -45,6 +46,7 @@ app.use('/' , otpRouter);
 app.use('/' , productRouter);
 app.use('/' , cartRouter);
 app.use('/' , shippingRouter);
+app.use('/' , contactUsRouter);
 //create app.listen and use PORT from .env file
 const PORT = process.env.PORT || 5000;
 

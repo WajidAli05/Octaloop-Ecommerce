@@ -2,6 +2,7 @@ import React , { useState , useContext , useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 
+
 //Material UI icons import
 import { Tooltip } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
@@ -51,8 +52,8 @@ function Navbar() {
         <div className='categories-links-div'>
             <ul className='categories-links'>
                 <li onClick={()=>navigate('/homepage')} >Home</li>
-                <li>Contact Us</li>
-                <li>About</li>
+                <li onClick={()=> navigate('/contactus')} >Contact Us</li>
+                <li onClick={()=> navigate('/about')} >About</li>
             </ul>
         </div>
         <div>

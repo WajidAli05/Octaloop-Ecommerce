@@ -10,8 +10,8 @@ import UsersTable from './pages/TableView';
 import AdminHome from './pages/AdminHome';
 import ExpendedProduct from './components/ExpendedProduct';
 import Cart from './components/Cart';
-import Footer from './components/Footer';
 import About from './components/About';
+import ContactUs from './pages/ContactUs';
 
 import { Routes, Route } from "react-router-dom";
 
@@ -31,8 +31,8 @@ function App() {
         <Route path='/AdminHome' element = {<AdminHome />} />
         <Route path='/cart' element = {<Cart />} />
         <Route path='/about' element = { <About /> } />
+        <Route path='/contactus' element = { <ContactUs /> } />
       </Routes>
-      <Footer />
     </div>
   );
 }

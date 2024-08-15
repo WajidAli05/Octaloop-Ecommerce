@@ -23,8 +23,8 @@ function Footer() {
         <Navbar />
         <footer className="footer">
         <div className="footer-content">
-            <div className="footer-section">
-                <img src='/logo.png' alt='MART logo' />
+            <div className="footer-section logo-div">
+                <img className='logo' src='/logo.png' alt='MART logo' />
             </div>
 
             <div className="footer-section">
