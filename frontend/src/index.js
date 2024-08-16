@@ -8,7 +8,6 @@ import OtpContextProvider from './contexts/provider/OtpContextProvider';
 import UsersContextProvider from './contexts/provider/UsersContextProvider';
 import { CartProvider } from './contexts/CartContext';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>

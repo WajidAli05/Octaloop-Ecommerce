@@ -21,6 +21,7 @@ import Navbar from './Navbar';
 //react-toastify imports
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { loadStripe } from '@stripe/stripe-js';
 
 function Cart() {
     const [cartItems, setCartItems] = useState([]);
@@ -37,6 +38,7 @@ function Cart() {
 
     const toastId = useRef(null);
     const shippingRef = useRef(null);
+    const shippingId = '';
 
     const cities = [
         'Karachi',
@@ -255,8 +257,13 @@ function Cart() {
         })
         .then((res)=> res.json())
         .then((data)=>{
-            !data.success ? setError(data.message) :
-            setSuccess(data.message);
+            if(!data.success){
+                setError(data.message);
+            }
+            else{                
+                shippingId = data.data._id;
+                setSuccess(data.message);
+            }
         })
         .catch((error)=> setError(error.message));
     }
@@ -284,14 +291,78 @@ function Cart() {
     }
 
     //complete purchase
-    const completePurchase = () => {
-        if(!city || !zip || !street || !phone){
-            shippingRef.current.style.borderColor = 'red';
-            shippingRef.current.style.backgroundColor = '#ffbcbc';
-            return;
-        }
+    const completePurchase = async () => {
+        // if(!city || !zip || !street || !phone){
+        //     shippingRef.current.style.borderColor = 'red';
+        //     shippingRef.current.style.backgroundColor = '#ffbcbc';
+        //     return;
+        // }
         
+        //load stripe
+        const stripe = await loadStripe('pk_test_51PoMqHP4pCdByGgNfxPjl21R67x9ZiyWZzO7EY9e8KOicK8O7hzzscwBs3kcZ0qOFNCB3Xp3LTltLXtX113hisbe00cIWX9bTR');
+    
+        fetch('http://localhost:3001/checkout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+            body: JSON.stringify({ products : productDetails , total })
+        })
+        .then((res) => res.json())
+        .then((data)=>{
+            if(data.success){
+                setSuccess(data.message);
+                stripe.redirectToCheckout({ sessionId: data.sessionId });
+            }
+            else{
+                setError(data.message);
+            }
+        })
+        .catch((error)=> setError(error.message));
     }
+
+    // //post order
+    // const postOrder = async () => {
+    //     const url = 'http://localhost:3001/create';
+      
+    //     const orderData = {
+    //         products: cartItems.map(item => ({
+    //             product: item.productId,
+    //             quantity: item.quantity,
+    //             price: productDetails[item.productId]?.price || 0,
+    //         })),
+    //         totalAmount: parseFloat(total), // Already calculated in findTotal method
+    //         orderStatus: 'Pending', // Default status
+    //         payment: null, // Set to actual payment ID if payment is mandatory, or leave as null
+    //         shipping: shippingId, // Set to actual shipping ID if required
+    //     };
+    
+    //     try {
+    //         console.log('orderData', orderData);
+            
+    //         const response = await fetch(url, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
+    //             },
+    //             body: JSON.stringify(orderData),
+    //         });
+    
+    //         const data = await response.json();
+    
+    //         if (data.success) {
+    //             setSuccess('Order placed successfully!');
+    //             // Optionally clear cart or redirect to order confirmation page
+    //         } else {
+    //             setError(data.message || 'Failed to place order');
+    //         }
+    //     } catch (error) {
+    //         setError('Error placing order: ' + error.message);
+    //     }
+    // };
+    
 
     return (
         <div className='cart-main-container'>
@@ -438,8 +509,8 @@ function Cart() {
                     <Button 
                         variant="contained" 
                         className="update-button"
-                        onClick={()=>{
-                            addShippingAddress();
+                        onClick={async ()=>{
+                            await addShippingAddress();
                             handleShippingToast();
                         }}>
                             
@@ -494,5 +565,4 @@ function Cart() {
         </div>
     );
 }
-
 export default Cart;

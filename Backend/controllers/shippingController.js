@@ -34,7 +34,7 @@ const addShippingDetails = async (req, res) => {
         });
         await shippingDetails.save();
         logger.info('Shipping details added successfully');
-        return res.status(200).json({ success: true, message: 'Shipping details added successfully' });
+        return res.status(200).json({ success: true, message: 'Shipping details added successfully' , data : shippingDetails});
 
     } catch (error) {
         logger.error(error.message);
